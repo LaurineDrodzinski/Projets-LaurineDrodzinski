@@ -1,0 +1,1101 @@
+<html>
+
+
+
+<!--EN-TETE-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>Jeu</title>
+
+    <style type="text/css">
+
+    td {
+        background:no-repeat center;
+        width:18px;    
+    }
+
+    </style>
+
+
+
+</head>
+
+
+
+<!-- CORPS -->
+<body id="body">
+
+    <img id="imgrejouer" src="Images/rejouer1.png" style="z-index:10; position:absolute; left:150px; top:105px; height:40px; width:60px;">
+    <img id="imggameover" src="Images/gameover.gif" style="z-index:9;">
+
+    <table id="tableau" style="height:155px; width:342px; border:5px black solid; margin-top:-5px;" cellspacing="0px" id="carte" >
+        
+        <!--*************************************PREMIERE LIGNE*************************************************************-->
+            <tr>
+
+                <td  id="case1" style="background: url('Images/herbe1.png');"><img id="imgcase1" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case2" style="background: url('Images/cointerre4.png');"> <img id="imgcase2" src="Images/vide.png" style="height:18px;"> </td>
+
+                <td  id="case3" style="background: url('Images/cointerre2.png');"><img id="imgcase3" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case4" style="background: url('Images/herbe1.png');"><img id="imgcase4" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case5" style="background: url('Images/cailloux2.png');"><img id="imgcase5" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case6" style="background: url('Images/herbe1.png');"><img id="imgcase6" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case7" style="background: url('Images/coineau1.png');">
+                    <img id="imgcase7" src="Images/vide.png" style="height:18px;">
+                    <img id="imgcaseeau1" src="Images/gifeau2.gif" style="height:22px; width:62px; margin:0 -80 -80 10">
+                </td>
+
+                <td  id="case8" style="background: url('Images/eau1.png');"><img id="imgcase8" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case9" style="background: url('Images/eau1.png');"><img id="imgcase9" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case10" style="background: url('Images/coineau2.png');"><img id="imgcase10" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case11" style="background: url('Images/herbe1.png');">
+                    <img id="imgcase11" src="Images/vide.png" style="height:18px;">
+                    <img id="imgcaseennemi11" src="Images/ennemi1.gif" style=" position:absolute; top:17px; left:221px;">
+                </td>
+
+                <td  id="case12" style="background: url('Images/touffeherbe1.png');"><img id="imgcase12" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case13" style="background: url('Images/herbe1.png');"><img id="imgcase13" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case14" style="background: url('Images/petitcoinpierre1.png');"><img id="imgcase14" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case15" style="background: url('Images/cotepierre1.png');"><img id="imgcase15" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case16" style="background: url('Images/cotepierre1.png');"><img id="imgcase16" src="Images/vide.png" style="height:18px;"></td>
+
+            </tr>
+        
+        <!--*************************************DEUXIEME LIGNE**********************************************************-->
+            <tr>
+
+                <td  id="case17" style="background: url('Images/herbe1.png');"> <img id="imgcase17" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case18" style="background: url('Images/herbe1.png');"> <img id="imgcase18" src="Images/vide.png" style="height:18px;"> </td>
+
+                <td  id="case19" style="background: url('Images/terre1.png');"><img id="imgcase19" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case20" style="background: url('Images/herbe1.png');">
+                    <img id="imgcase20" src="Images/vide.png" style="height:18px;">
+                    <img id="imgcasepersonnage2" src="Images/personnage2devant.gif" style="height:18px;">
+                </td>
+
+                <td  id="case21" style="background: url('Images/herbe1.png');"><img id="imgcase21" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case22" style="background: url('Images/herbe1.png');"><img id="imgcase22" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case23" style="background: url('Images/coineau4.png');"><img id="imgcase23" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case24" style="background: url('Images/eau2.png');"><img id="imgcase24" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case25" style="background: url('Images/eau2.png');"><img id="imgcase25" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case26" style="background: url('Images/coineau3.png');"><img id="imgcase26" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case27" style="background: url('Images/herbe1.png');"><img id="imgcase27" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case28" style="background: url('Images/herbe1.png');">
+                    <img id="imgcase28" src="Images/vide.png" style="height:18px;">
+                    <img id="imgcasepomme1" src="Images/pomme.gif" style="height:10px; margin-left:4.5px">
+                </td>
+
+                <td  id="case29" style="background: url('Images/petitcoinpierre1.png');"><img id="imgcase29" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case30" style="background: url('Images/coinpierre1.png');"><img id="imgcase30" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case31" style="background: url('Images/pierre2.png');"><img id="imgcase31" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case32" style="background: url('Images/pierre2.png');"><img id="imgcase32" src="Images/vide.png" style="height:18px;"></td>
+
+            </tr>
+
+        <!--*************************************TROISIEME LIGNE********************************************************-->
+            <tr>
+
+                <td  id="case33" style="background: url('Images/fleur1.png');"><img id="imgcase33" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case34" style="background: url('Images/herbe1.png');"><img id="imgcase34" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case35" style="background: url('Images/cointerre4.png');"><img id="imgcase35" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case36" style="background: url('Images/terre2.png');"><img id="imgcase36" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case37" style="background: url('Images/terre2.png');"><img id="imgcase37" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case38" style="background: url('Images/cointerre2.png');"><img id="imgcase38" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case39" style="background: url('Images/herbe1.png');"><img id="imgcase39" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case40" style="background: url('Images/cailloux.png');"><img id="imgcase40" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case41" style="background: url('Images/herbe1.png');"><img id="imgcase41" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case42" style="background: url('Images/herbe1.png');"><img id="imgcase42" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case43" style="background: url('Images/herbe1.png');"><img id="imgcase43" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case44" style="background: url('Images/herbe1.png');"><img id="imgcase44" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case45" style="background: url('Images/petitcoinpierre4.png');"><img id="imgcase45" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case46" style="background: url('Images/cotepierre3.png');"><img id="imgcase46" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case47" style="background: url('Images/cotepierre3.png');"><img id="imgcase47" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case48" style="background: url('Images/coinpierre4.png');"><img id="imgcase48" src="Images/vide.png" style="height:18px;"></td>
+
+            </tr> 
+
+        <!--*************************************QUATRIEME LIGNE*********************************************************-->
+            <tr>
+
+                <td  id="case49" style="background: url('Images/herbe1.png');"><img id="imgcase49" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case50" style="background: url('Images/herbe1.png');">
+                    <img id="imgcase50" src="Images/vide.png" style="height:18px;">
+                    <img id="imgcasepomme2" src="Images/pomme.gif" style="height:10px; margin-left:4.5px">
+                </td>
+
+                <td  id="case51" style="background: url('Images/herbe1.png');"><img id="imgcase51" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case52" style="background: url('Images/herbe1.png');"><img id="imgcase52" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case53" style="background: url('Images/souche.png');"><img id="imgcase53" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case54" style="background: url('Images/cointerre4.png');"><img id="imgcase54" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case55" style="background: url('Images/terre2.png');"><img id="imgcase55" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case56" style="background: url('Images/terre3.png');"><img id="imgcase56" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case57" style="background: url('Images/terre.png');"><img id="imgcase57" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case58" style="background: url('Images/terre.png');"><img id="imgcase58" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case59" style="background: url('Images/terre4.png');"><img id="imgcase59" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case60" style="background: url('Images/herbe1.png');"><img id="imgcase60" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case61" style="background: url('Images/herbe1.png');"><img id="imgcase61" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case62" style="background: url('Images/herbe1.png');"><img id="imgcase62" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case63" style="background: url('Images/fleur3.png');"><img id="imgcase63" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case64" style="background: url('Images/herbe1.png');">
+                    <img id="imgcase64" src="Images/vide.png" style="height:18px;">
+                    <img id="imgcaseennemi64" src="Images/ennemi2.gif" style=" position:absolute; top:73px; left:117px;"></td>
+
+            </tr>
+
+            <tr>
+                
+                <td  id="case65" style="background: url('Images/eau1.png');">
+                    <img id="imgcase65" src="Images/vide.png" style="height:18px;">
+                    <img id="imgcaseeau2" src="Images/gifeau.gif" style="height:42.5px; width:51px; margin:0 -50 -50 0">
+                </td>
+
+                <td  id="case66" style="background: url('Images/eau1.png');"><img id="imgcase66" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case67" style="background: url('Images/coineau2.png');"><img id="imgcase67" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case68" style="background: url('Images/herbe1.png');"><img id="imgcase68" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case69" style="background: url('Images/herbe1.png');"><img id="imgcase69" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case70" style="background: url('Images/herbe1.png');"><img id="imgcase70" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case71" style="background: url('Images/herbe1.png');"><img id="imgcase71" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case72" style="background: url('Images/terre10.png');"><img id="imgcase72" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case73" style="background: url('Images/terre8.png') no-repeat center;"><img id="imgcase73" src="Images/vide.png" style="height:18px; no-repeat center;"></td>
+
+                <td  id="case74" style="background: url('Images/terre8.png');"><img id="imgcase74" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case75" style="background: url('Images/terre9.png');"><img id="imgcase75" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case76" style="background: url('Images/herbe1.png');"><img id="imgcase76" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case77" style="background: url('Images/herbe1.png');"><img id="imgcase77" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case78" style="background: url('Images/herbe1.png');"><img id="imgcase78" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case79" style="background: url('Images/herbe1.png');"><img id="imgcase79" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case80" style="background: url('Images/herbe1.png');"><img id="imgcase80" src="Images/vide.png" style="height:18px;"></td>
+
+            </tr>
+
+            <tr>
+                
+                <td  id="case81" style="background: url('Images/eau.png');"><img id="imgcase81" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case82" style="background: url('Images/eau.png');"><img id="imgcase82" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case83" style="background: url('Images/eau3.png');"><img id="imgcase83" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case84" style="background: url('Images/cailloux2.png');"><img id="imgcase84" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case85" style="background: url('Images/herbe1.png');"><img id="imgcase85" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case86" style="background: url('Images/herbe1.png');"><img id="imgcase86" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case87" style="background: url('Images/herbe1.png');"><img id="imgcase87" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case88" style="background: url('Images/herbe1.png');"><img id="imgcase88" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case89" style="background: url('Images/herbe1.png');">
+                    <img id="imgcase89" src="Images/vide.png" style="height:18px;">
+                    <img id="imgcasepomme3" src="Images/pomme.gif" style="height:10px; margin-left:4.5px">
+                </td>
+
+                <td  id="case90" style="background: url('Images/herbe1.png');"><img id="imgcase90" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case91" style="background: url('Images/herbe1.png');"><img id="imgcase91" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case92" style="background: url('Images/fleur2.png');"><img id="imgcase92" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case93" style="background: url('Images/herbe1.png');"><img id="imgcase93" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case94" style="background: url('Images/herbe1.png');"><img id="imgcase94" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case95" style="background: url('Images/herbe1.png');"><img id="imgcase95" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case96" style="background: url('Images/herbe1.png');"><img id="imgcase96" src="Images/vide.png" style="height:18px;"></td>
+
+            </tr>
+
+            <tr>
+                
+                <td  id="case97" style="background: url('Images/eau2.png');"><img id="imgcase97" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case98" style="background: url('Images/eau2.png');"><img id="imgcase98" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case99" style="background: url('Images/coineau3.png');"><img id="imgcase99" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case100" style="background: url('Images/herbe1.png');"><img id="imgcase100" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case101" style="background: url('Images/herbe1.png');"><img id="imgcase101" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case102" style="background: url('Images/herbe1.png');"><img id="imgcase102" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case103" style="background: url('Images/touffeherbe1.png');"><img id="imgcase103" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case104" style="background: url('Images/herbe1.png');"><img id="imgcase104" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case105" style="background: url('Images/herbe1.png');"><img id="imgcase105" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case106" style="background: url('Images/herbe1.png');"><img id="imgcase106" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case107" style="background: url('Images/herbe1.png');"><img id="imgcase107" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case108" style="background: url('Images/herbe1.png');"><img id="imgcase108" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case109" style="background: url('Images/herbe1.png');"><img id="imgcase109" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case110" style="background: url('Images/herbe1.png');"><img id="imgcase110" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case111" style="background: url('Images/herbe1.png');"><img id="imgcase111" src="Images/vide.png" style="height:18px;"></td>
+
+                <td  id="case112" style="background: url('Images/cailloux2.png');"><img id="imgcase112" src="Images/vide.png" style="height:18px;"></td>
+
+            </tr>
+
+    </table>
+
+<!-- Englobe tout ce qui se situe en dehors du tableau -->
+<div id="globalite">
+
+    <!-- Image expliquant les règles --> 
+    <img id="dialogue" src="Images/vide.png" style="position:absolute; height:315px; width:315px; top:10px; left:400px;">
+
+    <!-- Bouton permettant de lancer la partie -->
+    <input type="button" value="Jouer" id="btnjouer" style="position:absolute; left:10px; top:170px;">
+
+    <!-- Bouton permettant d'afficher l'image "dialogue" -->
+    <img id="btndialogue" src="Images/boutonparler.png" style="position:absolute; height:60px; left:150px; top:180px;">
+    
+    <!-- Images variables représentant la barre de vie -->
+    <img id="vie" src="Images/vide.png" style="position:absolute; height:20px; left:280px; top:170px;">
+
+    <!-- Ensemble des flèches -->
+    <div id="fleches">
+        <!-- Bouton/Image permettant d'aller vers le haut -->
+        <img id="flechehaut" src="Images/flèchehaut.png" style="position:absolute; height:30px; left:39px; top:177px;">
+
+        <!-- Bouton/Image permettant d'aller vers le bas-->
+        <img id="flechebas" src="Images/flèchebas.png" style="position:absolute; height:30px; left:41px; top:210px;">
+
+        <!-- Bouton/Image permettant d'aller vers la gauche -->
+        <img id="flechegauche" src="Images/flèchegauche.png" style="position:absolute; height:30px; top:210px;">
+
+        <!-- Bouton/Image permettant d'aller vers la droite -->
+        <img id="flechedroite" src="Images/flèchedroite.png" style="position:absolute; height:30px; left:74px; top:210px;">
+    </div>
+
+    <!-- Paragraphe où s'affichera le compteur de pommes -->
+    <p id="compteurpomme" style="position:absolute; top:240px;"> </p>
+
+    <!-- Fond sonore et bruitages -->
+    <p style="position:absolute; left:30px; bottom:25px;"> <audio id="fondsonore" src="Musiques/zelda2.mp3" autoplay loop controls > </audio> </p>
+    <audio id="bruitcri" src="Images/vide.png" autoplay > </audio>
+    <audio id="bruitsortie" src="Images/vide.png" autoplay > </audio>
+    <audio id="bruitmangerpomme" src="Images/vide.png" autoplay > </audio>
+    <audio id="fondgameover" src="Images/vide.png" autoplay > </audio>
+    <audio id="bruitdialogue" src="Images/vide.png" autoplay > </audio>
+</div>
+
+    
+    
+  
+
+<!-- DEBUT DU SCRIPT -->
+<script language="javascript">
+
+/*VARIABLES*/
+
+    //Variable pour le personnage:
+    var place=2;
+    //Variables pour les pommes:
+    var compteurpomme=3;
+    var pomme50=1;
+    var pomme28=1;
+    var pomme89=1;
+    //Variables pour l'ennemi 1:
+    var placeennemi1=11;
+    var ennemiavance=0;
+    var ennemirecule=0;
+    //Variables pour l'ennemi 2:
+    var placeennemi2=64;
+    var ennemigauche=0;
+    var ennemidroite=0;
+    //Variables pour la barre de vie:
+    var compteurvie=3;
+    var viepartour=0;
+
+
+//Tous ces éléments sont au départ cachés
+document.getElementById('fleches').style.display="none";
+document.getElementById('btndialogue').style.display="none";
+document.getElementById('imggameover').style.display="none";
+document.getElementById('imgrejouer').style.display="none";
+document.getElementById('imgcase28').style.display="none";
+document.getElementById('imgcase50').style.display="none";
+document.getElementById('imgcase89').style.display="none";
+document.getElementById('imgcase20').style.display="none";
+document.getElementById('imgcase65').style.display="none";
+document.getElementById('imgcase7').style.display="none";
+
+
+/*Quand on clique sur le bouton "Jouer"....*/
+document.getElementById('btnjouer').onclick=function(){
+    
+    //Affichage et habillage de l'animation de départ (entrée du personnage) 
+    document.getElementById('imgcase2').src="Images/depart.gif";
+    document.getElementById('imgcase2').style.marginLeft="3.5px";
+    
+    //Affichage ou non de certains éléments
+    document.getElementById('btnjouer').style.display="none";
+    document.getElementById('fleches').style.display="block";
+    
+    //Initialisation des variables (nombre de pommes à manger et vie du personnage)
+    document.getElementById('compteurpomme').innerHTML="Il vous reste "+compteurpomme+" pommes a manger.";
+    document.getElementById('vie').src="Images/3vies.png";
+
+}
+
+
+//Quand on clique sur les flèches ...
+document.getElementById('fleches').onclick=function(){
+    
+    if(pomme28==1 && place==28 ){
+        
+        //Affichage ou non de certains éléments
+        document.getElementById('imgcasepomme1').style.display="none";
+        document.getElementById('imgcase28').style.display="block";
+        
+        //Modification des variables
+        compteurpomme=compteurpomme-1;
+        pomme28=0;
+        
+        //Bruitages
+        document.getElementById('bruitmangerpomme').src="Musiques/mangerpomme.mp3";
+
+    }
+
+    if(pomme50==1 && place==50){
+
+        //Affichage ou non de certains éléments
+        document.getElementById('imgcasepomme2').style.display="none";
+        document.getElementById('imgcase50').style.display="block";
+
+        //Modification des variables
+        compteurpomme=compteurpomme-1;
+        pomme50=0;
+
+        //Bruitages
+        document.getElementById('bruitmangerpomme').src="Musiques/mangerpomme.mp3";
+
+    }
+
+    if(pomme89==1 && place==89){
+
+        //Affichage ou non de certains éléments
+        document.getElementById('imgcasepomme3').style.display="none";
+        document.getElementById('imgcase89').style.display="block";
+
+        //Modification des variables
+        compteurpomme=compteurpomme-1;
+        pomme89=0;
+
+        //Bruitages
+        document.getElementById('bruitmangerpomme').src="Musiques/mangerpomme.mp3";
+
+    }
+
+    //Quand il n'y a plus de pomme...
+    if(compteurpomme==0){
+        
+        document.getElementById('compteurpomme').innerHTML="Il n'y a plus de pommes a manger. Oh un tunnel est apparu ! Où peut-il mener ?";
+        
+        //Affichage de la sortie
+        document.getElementById('case73').style.backgroundImage="url('Images/trou.png')";
+        document.getElementById('imgcase73').src="Images/etoile.gif";
+        document.getElementById('imgcase73').style.height="15px";
+        document.getElementById('imgcase73').style.width="18px";
+        document.getElementById('imgcase73').style.marginLeft="0px";
+        document.getElementById('imgcase73').style.marginRight="-5px";
+        document.getElementById('bruitsortie').src="Musiques/bruitsortie.mp3";
+        compteurpomme=-1;//Pour éviter que la condition se ré-execute
+
+        
+
+    }
+
+    //Quand le personnage arrive sur la sortie...
+        if(place==73 && compteurpomme==-1){
+            
+            //Ouvre une alerte
+            alert('Zone en travaux! revenez dans quelques jours.');
+            
+            //Actualise la page
+            location.reload(); 
+
+        }
+
+    document.getElementById('compteurpomme').innerHTML="Il vous reste "+compteurpomme+" pommes a manger.";
+
+    //Efface l'image expliquant les règles lorsque l'on appuie sur les flèches
+    document.getElementById('dialogue').src="Images/vide.png";
+
+    //Le personnage 2 (bleu) se replace de face
+    document.getElementById('imgcasepersonnage2').src="Images/personnage2devant.gif";
+
+}
+
+
+
+
+//Quand on clique sur la flèche du haut...
+document.getElementById('flechehaut').onclick=function(){
+
+    //Habillage
+    document.getElementById('imgcase'+place).style.height="40px";
+    document.getElementById('imgcase'+place).style.width="15px";
+    document.getElementById('imgcase'+place).style.marginLeft="2px";
+    document.getElementById('imgcase'+place).style.marginRight="-10px";
+    document.getElementById('imgcase'+place).style.marginTop="-30px";
+    document.getElementById('imgcase'+place).style.marginBottom="-10px";
+    
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place>1){
+        document.getElementById('imgcase'+(place-1)).src="Images/vide.png";
+    }
+
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place<97){
+        document.getElementById('imgcase'+(place+16)).src="Images/vide.png";
+    }
+    
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place<112){
+        document.getElementById('imgcase'+(place+1)).src="Images/vide.png";
+    } 
+
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place>16){
+        document.getElementById('imgcase'+(place-16)).src="Images/vide.png";
+        document.getElementById('imgcase'+place).src="Images/recule.gif";
+        place=place-16;
+    }
+    else{
+    //Quand le personnage se situe sur la première ligne et que l'on appuie sur la flèche du haut...
+        
+        //Habillage
+        document.getElementById('imgcase'+place).style.height="18px";
+        document.getElementById('imgcase'+place).style.width="15px";
+        document.getElementById('imgcase'+place).style.marginLeft="2px";
+        document.getElementById('imgcase'+place).style.marginRight="-10px";
+        document.getElementById('imgcase'+place).style.marginTop="-9.3px";
+        document.getElementById('imgcase'+place).style.marginBottom="-10px";
+
+        document.getElementById('imgcase'+place).src="Images/dos.png";
+    }
+
+    //Empêche le personnage d'avancer là où il  ne doit pas aller
+    if(document.getElementById('case'+place)==document.getElementById('case7') 
+        || document.getElementById('case'+place)==document.getElementById('case8')
+        || document.getElementById('case'+place)==document.getElementById('case9')
+        || document.getElementById('case'+place)==document.getElementById('case10')
+        || document.getElementById('case'+place)==document.getElementById('case20')
+        || document.getElementById('case'+place)==document.getElementById('case29')
+        || document.getElementById('case'+place)==document.getElementById('case30')
+        || document.getElementById('case'+place)==document.getElementById('case31')
+        || document.getElementById('case'+place)==document.getElementById('case48')
+        || document.getElementById('case'+place)==document.getElementById('case53')
+        || document.getElementById('case'+place)==document.getElementById('case81')
+        || document.getElementById('case'+place)==document.getElementById('case82')
+        || document.getElementById('case'+place)==document.getElementById('case83')){
+
+        place=place+16;
+        
+        //Habillage
+        document.getElementById('imgcase'+place).style.height="18.5px";
+        document.getElementById('imgcase'+place).style.width="15px";
+        document.getElementById('imgcase'+place).style.marginLeft="2px";
+        document.getElementById('imgcase'+place).style.marginRight="-8px";
+        document.getElementById('imgcase'+place).style.marginTop="-9.5px";
+        document.getElementById('imgcase'+place).style.marginBottom="-9.5px";
+
+        document.getElementById('imgcase'+place).src="Images/dos.png";
+    }
+}
+
+//Quand on clique sur la flèche du bas...
+document.getElementById('flechebas').onclick=function(){
+
+    //Habillage
+    document.getElementById('imgcase'+place).style.height="40px";
+    document.getElementById('imgcase'+place).style.width="15px";
+    document.getElementById('imgcase'+place).style.marginLeft="2px";
+    document.getElementById('imgcase'+place).style.marginTop="-10px";
+    document.getElementById('imgcase'+place).style.marginBottom="-30px";
+  
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place>16){
+        document.getElementById('imgcase'+(place-16)).src="Images/vide.png";
+    }
+  
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place>1){
+        document.getElementById('imgcase'+(place-1)).src="Images/vide.png";
+    }
+  
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place<112){
+        document.getElementById('imgcase'+(place+1)).src="Images/vide.png";
+    }
+
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place<97){
+        document.getElementById('imgcase'+(place+16)).src="Images/vide.png";
+        document.getElementById('imgcase'+place).src="Images/avance.gif";
+        place=place+16;
+    }
+    else{
+    //Quand le personnage se situe sur la dernière ligne et que l'on appuie sur la flèche du bas...
+
+        //Habillage
+        document.getElementById('imgcase'+place).style.height="18px";
+        document.getElementById('imgcase'+place).style.width="15px";
+        document.getElementById('imgcase'+place).style.marginLeft="2px";
+        document.getElementById('imgcase'+place).style.marginRight="-10px";
+        document.getElementById('imgcase'+place).style.marginTop="-9px";
+        document.getElementById('imgcase'+place).style.marginBottom="-11px";
+
+        document.getElementById('imgcase'+place).src="Images/devant.png";
+    }
+
+    //Empêche le personnage d'avancer là où il  ne doit pas aller
+    if(document.getElementById('case'+place)==document.getElementById('case20')
+        || document.getElementById('case'+place)==document.getElementById('case29')
+        || document.getElementById('case'+place)==document.getElementById('case53')
+        || document.getElementById('case'+place)==document.getElementById('case65')
+        || document.getElementById('case'+place)==document.getElementById('case66')
+        || document.getElementById('case'+place)==document.getElementById('case67')){
+
+        place=place-16;
+
+        //Habillage
+        document.getElementById('imgcase'+place).style.height="18px";
+        document.getElementById('imgcase'+place).style.width="14.5px";
+        document.getElementById('imgcase'+place).style.marginLeft="2px";
+        document.getElementById('imgcase'+place).style.marginRight="-8px";
+        document.getElementById('imgcase'+place).style.marginTop="-10px";
+        document.getElementById('imgcase'+place).style.marginBottom="-9px";
+
+        document.getElementById('imgcase'+place).src="Images/devant.png";
+    }
+    
+}
+
+//Quand on clique sur la flèche de droite...
+document.getElementById('flechedroite').onclick=function(){
+
+    //Habillage
+    document.getElementById('imgcase'+place).style.height="18px";
+    document.getElementById('imgcase'+place).style.width="35px";
+    document.getElementById('imgcase'+place).style.marginLeft="0px";
+    document.getElementById('imgcase'+place).style.marginRight="-20px";
+    document.getElementById('imgcase'+place).style.marginTop="-9px";
+    document.getElementById('imgcase'+place).style.marginBottom="-20px";
+
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place>16){
+        document.getElementById('imgcase'+(place-16)).src="Images/vide.png";
+    }
+
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place<97){
+        document.getElementById('imgcase'+(place+16)).src="Images/vide.png";
+    }  
+
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place>1){
+        document.getElementById('imgcase'+(place-1)).src="Images/vide.png";
+    }
+   
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place!=16 && place!=32 && place!=48 && place!=64 && place!=80 && place!=96 && place!=112){
+        document.getElementById('imgcase'+(place+1)).src="Images/vide.png";
+        document.getElementById('imgcase'+place).src="Images/avancedroite.gif";
+        place=place+1;
+    }
+    else{
+    //Quand le personnage se situe sur la dernière colonne et que l'on appuie sur la flèche de droite...
+
+        //Habillage
+        document.getElementById('imgcase'+place).style.height="18px";
+        document.getElementById('imgcase'+place).style.width="14.5px";
+        document.getElementById('imgcase'+place).style.marginLeft="0px";
+        document.getElementById('imgcase'+place).style.marginRight="-8px";
+        document.getElementById('imgcase'+place).style.marginTop="-10px";
+        document.getElementById('imgcase'+place).style.marginBottom="-9px";
+
+        document.getElementById('imgcase'+place).src="Images/profildroit.png";
+    }
+
+    //Empêche le personnage d'avancer là où il  ne doit pas aller
+    if(document.getElementById('case'+place)==document.getElementById('case7')
+        || document.getElementById('case'+place)==document.getElementById('case14')
+        || document.getElementById('case'+place)==document.getElementById('case20')
+        || document.getElementById('case'+place)==document.getElementById('case29')
+        || document.getElementById('case'+place)==document.getElementById('case48')
+        || document.getElementById('case'+place)==document.getElementById('case53')){
+
+        place=place-1;
+
+        //Habillage
+        document.getElementById('imgcase'+place).style.height="18.5px";
+        document.getElementById('imgcase'+place).style.width="15px";
+        document.getElementById('imgcase'+place).style.marginLeft="0px";
+        document.getElementById('imgcase'+place).style.marginRight="-8px";
+        document.getElementById('imgcase'+place).style.marginTop="-9px";
+        document.getElementById('imgcase'+place).style.marginBottom="-10px";
+
+        document.getElementById('imgcase'+place).src="Images/profildroit.png";
+    }
+}
+
+//Quand on clique sur la flèche de gauche...
+document.getElementById('flechegauche').onclick=function(){
+
+    //Habillage
+    document.getElementById('imgcase'+place).style.height="18px";
+    document.getElementById('imgcase'+place).style.width="35px";
+    document.getElementById('imgcase'+place).style.marginLeft="-18px";
+    document.getElementById('imgcase'+place).style.marginRight="0px";
+    document.getElementById('imgcase'+place).style.marginTop="-9px";
+    document.getElementById('imgcase'+place).style.marginBottom="-20px";
+
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+   if(place>16){
+            document.getElementById('imgcase'+(place-16)).src="Images/vide.png";
+        }
+   
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place<97){
+        document.getElementById('imgcase'+(place+16)).src="Images/vide.png";
+    }
+    
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place<112){
+        document.getElementById('imgcase'+(place+1)).src="Images/vide.png";
+    } 
+    
+    //Efface l'image située sur la case précédente (s'il y en avait une)
+    if(place!=1 && place!=17 && place!=33 && place!=49 && place!=65 && place!=81 && place!=97){
+        document.getElementById('imgcase'+(place-1)).src="Images/vide.png";
+        document.getElementById('imgcase'+place).src="Images/avancegauche.gif";
+        place=place-1;
+    }
+    else{
+    //Quand le personnage se situe sur la première colonne et que l'on appuie sur la flèche de gauche...
+
+        //Habillage
+        document.getElementById('imgcase'+place).style.height="18.5px";
+        document.getElementById('imgcase'+place).style.width="16px";
+        document.getElementById('imgcase'+place).style.marginLeft="2.3px";
+        document.getElementById('imgcase'+place).style.marginRight="-10px";
+        document.getElementById('imgcase'+place).style.marginTop="-8.5px";
+        document.getElementById('imgcase'+place).style.marginBottom="-20px";
+
+        document.getElementById('imgcase'+place).src="Images/profilgauche.png";
+    }
+
+    //Empêche le personnage d'avancer là où il  ne doit pas aller
+    if(document.getElementById('case'+place)==document.getElementById('case10')
+        || document.getElementById('case'+place)==document.getElementById('case20')
+        || document.getElementById('case'+place)==document.getElementById('case53')
+        || document.getElementById('case'+place)==document.getElementById('case67')
+        || document.getElementById('case'+place)==document.getElementById('case83')){
+
+        place=place+1;
+
+        //Habillage
+        document.getElementById('imgcase'+place).style.height="18.5px";
+        document.getElementById('imgcase'+place).style.width="15px";
+        document.getElementById('imgcase'+place).style.marginLeft="2px";
+        document.getElementById('imgcase'+place).style.marginRight="-8px";
+        document.getElementById('imgcase'+place).style.marginTop="-9px";
+        document.getElementById('imgcase'+place).style.marginBottom="-10px";
+
+        document.getElementById('imgcase'+place).src="Images/profilgauche.png";
+    }
+}
+
+//Quand on clique...
+document.onclick=function(){
+
+    //Habillage
+    document.getElementById('imgcasepersonnage2').style.height="18px";
+    document.getElementById('imgcasepersonnage2').style.width="18px";
+    document.getElementById('imgcasepersonnage2').style.marginLeft="0px";
+    document.getElementById('imgcasepersonnage2').style.marginRight="-8px";
+    document.getElementById('imgcasepersonnage2').style.marginTop="-9px";
+    document.getElementById('imgcasepersonnage2').style.marginBottom="-8px";
+
+    //Affichage ou non de certains éléments
+    document.getElementById('btndialogue').style.display="none";
+    document.getElementById('case5').style.backgroundImage="url('Images/cailloux2.png')";
+    document.getElementById('case3').style.backgroundImage="url('Images/cointerre2.png')";
+
+    if (place==3) {
+        
+        //Affichage ou non de certains éléments
+        document.getElementById('btndialogue').style.display="block";
+        document.getElementById('case5').style.backgroundImage="url('Images/bulledialogue.png')";
+        document.getElementById('imgcasepersonnage2').src="Images/personnage2diagonale4.gif";
+
+        //Habillage
+        document.getElementById('imgcasepersonnage2').style.height="18px";
+        document.getElementById('imgcasepersonnage2').style.width="14px";
+        document.getElementById('imgcasepersonnage2').style.marginLeft="1.5px";
+        document.getElementById('imgcasepersonnage2').style.marginRight="-8px";
+        document.getElementById('imgcasepersonnage2').style.marginTop="-9px";
+        document.getElementById('imgcasepersonnage2').style.marginBottom="-8px"; 
+
+    }
+
+if (place==4) {
+
+        //Affichage ou non de certains éléments
+        document.getElementById('btndialogue').style.display="block";
+        document.getElementById('case5').style.backgroundImage="url('Images/bulledialogue.png')";
+        document.getElementById('imgcasepersonnage2').src="Images/personnage2dos.gif";
+
+        //Habillage
+        document.getElementById('imgcasepersonnage2').style.height="18px";
+        document.getElementById('imgcasepersonnage2').style.width="14px";
+        document.getElementById('imgcasepersonnage2').style.marginLeft="1.5px";
+        document.getElementById('imgcasepersonnage2').style.marginRight="-8px";
+        document.getElementById('imgcasepersonnage2').style.marginTop="-9px";
+        document.getElementById('imgcasepersonnage2').style.marginBottom="-8px";    
+    }
+
+if (place==5) {
+
+        //Affichage ou non de certains éléments
+        document.getElementById('btndialogue').style.display="block";
+        document.getElementById('case3').style.backgroundImage="url('Images/bulledialogue2.png')";
+        document.getElementById('imgcasepersonnage2').src="Images/personnage2diagonale3.gif";
+
+        //Habillage
+        document.getElementById('imgcasepersonnage2').style.height="18px";
+        document.getElementById('imgcasepersonnage2').style.width="14px";
+        document.getElementById('imgcasepersonnage2').style.marginLeft="1.5px";
+        document.getElementById('imgcasepersonnage2').style.marginRight="-8px";
+        document.getElementById('imgcasepersonnage2').style.marginTop="-9px";
+        document.getElementById('imgcasepersonnage2').style.marginBottom="-8px";    
+    }    
+
+if (place==19) {
+
+        //Affichage ou non de certains éléments
+        document.getElementById('btndialogue').style.display="block";
+        document.getElementById('case5').style.backgroundImage="url('Images/bulledialogue.png')";
+        document.getElementById('imgcasepersonnage2').src="Images/personnage2profilgauche.gif";
+
+        //Habillage
+        document.getElementById('imgcasepersonnage2').style.height="20px";
+        document.getElementById('imgcasepersonnage2').style.width="14px";
+        document.getElementById('imgcasepersonnage2').style.marginLeft="2px";
+        document.getElementById('imgcasepersonnage2').style.marginRight="-8px";
+        document.getElementById('imgcasepersonnage2').style.marginTop="-9px";
+        document.getElementById('imgcasepersonnage2').style.marginBottom="-7px";
+    }
+
+if (place==21) {
+
+        //Affichage ou non de certains éléments
+        document.getElementById('btndialogue').style.display="block";
+        document.getElementById('case5').style.backgroundImage="url('Images/bulledialogue.png')";
+        document.getElementById('imgcasepersonnage2').src="Images/personnage2profildroit.gif";
+
+        //Habillage
+        document.getElementById('imgcasepersonnage2').style.height="20px";
+        document.getElementById('imgcasepersonnage2').style.width="14px";
+        document.getElementById('imgcasepersonnage2').style.marginLeft="1.5px";
+        document.getElementById('imgcasepersonnage2').style.marginRight="-8px";
+        document.getElementById('imgcasepersonnage2').style.marginTop="-9px";
+        document.getElementById('imgcasepersonnage2').style.marginBottom="-7px";    
+    }
+
+if (place==35) {
+
+        //Affichage ou non de certains éléments
+        document.getElementById('btndialogue').style.display="block";
+        document.getElementById('case5').style.backgroundImage="url('Images/bulledialogue.png')";
+        document.getElementById('imgcasepersonnage2').src="Images/personnage2diagonale1.gif";
+
+        //Habillage
+        document.getElementById('imgcasepersonnage2').style.height="18px";
+        document.getElementById('imgcasepersonnage2').style.width="14px";
+        document.getElementById('imgcasepersonnage2').style.marginLeft="1.5px";
+        document.getElementById('imgcasepersonnage2').style.marginRight="-8px";
+        document.getElementById('imgcasepersonnage2').style.marginTop="-9px";
+        document.getElementById('imgcasepersonnage2').style.marginBottom="-8px";    
+    }
+
+if (place==36) {
+
+        //Affichage ou non de certains éléments
+        document.getElementById('btndialogue').style.display="block";
+        document.getElementById('case5').style.backgroundImage="url('Images/bulledialogue.png')";
+        document.getElementById('imgcasepersonnage2').src="Images/personnage2devant.gif";
+
+        //Habillage
+        document.getElementById('imgcasepersonnage2').style.height="18px";
+        document.getElementById('imgcasepersonnage2').style.width="18px";
+        document.getElementById('imgcasepersonnage2').style.marginLeft="0px";
+        document.getElementById('imgcasepersonnage2').style.marginRight="-8px";
+        document.getElementById('imgcasepersonnage2').style.marginTop="-9px";
+        document.getElementById('imgcasepersonnage2').style.marginBottom="-8px";
+    }
+
+if (place==37) {
+
+        //Affichage ou non de certains éléments
+        document.getElementById('btndialogue').style.display="block";
+        document.getElementById('case5').style.backgroundImage="url('Images/bulledialogue.png')";
+        document.getElementById('imgcasepersonnage2').src="Images/personnage2diagonale2.gif";
+
+        //Habillage
+        document.getElementById('imgcasepersonnage2').style.height="18px";
+        document.getElementById('imgcasepersonnage2').style.width="14px";
+        document.getElementById('imgcasepersonnage2').style.marginLeft="1.5px";
+        document.getElementById('imgcasepersonnage2').style.marginRight="-8px";
+        document.getElementById('imgcasepersonnage2').style.marginTop="-9px";
+        document.getElementById('imgcasepersonnage2').style.marginBottom="-8px";    
+    }
+
+    //Quand on clique sur le bouton "Parler" on affiche l'image expliquant les règles
+    document.getElementById('btndialogue').onclick=function(){
+        document.getElementById('dialogue').src="Images/doraemondialogue.png";
+        document.getElementById('bruitdialogue').src="Musiques/personnage1.mp3";
+    }
+
+}
+
+
+/* Fonction concernant l'animation de l'ennemi 1 et la variable représentant son mouvement */
+    
+    //Création d'un intervalle de temps qui permettra le changement de valeur de la variable (place de l'ennemi 1)
+    var intervalleennemi1 = setInterval("Ennemi1()",610);
+
+    //Fonction
+    function Ennemi1(){
+        
+        //Lorsque l'ennemi 1 se déplace vers le bas
+        if(ennemiavance<7){
+            ennemiavance=ennemiavance+1;
+            placeennemi1=placeennemi1+16;
+        }
+
+        //Lorsque l'ennemi 1 se déplace vers le haut
+        if(ennemiavance==7){
+            placeennemi1=placeennemi1-16;
+            ennemirecule=ennemirecule+1;
+        }
+
+        //Permet de régler le timing au niveau de la mise a jour du gif
+        if(ennemiavance>=7 && ennemirecule>=7){
+            ennemiavance=ennemiavance+1;
+            ennemirecule=ennemirecule+1;
+        }
+
+        //Rénitialisation de la fonction une fois que l'ennemi 1 a fait un aller-retour 
+        if(ennemiavance==9 && ennemirecule==9){
+            ennemiavance=0;
+            ennemirecule=0;
+            document.getElementById('imgcaseennemi11').src="Images/ennemi1.gif";
+        }
+
+        //Permet au joueur de ne pas perdre toute sa vie quand il touche un ennemi
+        if(viepartour==1){
+            setTimeout("viepartour2()",1000);
+        }
+        
+    }
+
+
+/* Fonctions concernant l'animation de l'ennemi 2 et la variable représentant son mouvement */
+    
+    //Création d'un intervalle de temps qui permettra le changement de valeur de la variable (place de l'ennemi 2)
+    var intervalleennemi2 = setInterval("Ennemi2()",520);
+    
+    //Fonction
+    function Ennemi2(){
+
+        //Lorsque l'ennemi 2 se déplace vers la gauche
+        if(ennemigauche<11){
+            ennemigauche=ennemigauche+1;
+            placeennemi2=placeennemi2-1;
+        }
+
+        //Lorsque l'ennemi 2 se déplace vers la droite
+        if(ennemigauche==11){
+            ennemidroite=ennemidroite+1;
+            placeennemi2=placeennemi2+1;
+        }
+
+        //Permet de régler le timing au niveau de la mise a jour du gif
+        if(ennemigauche>=11 && ennemidroite>=11){
+            ennemigauche=ennemigauche+1;
+            ennemidroite=ennemidroite+1;
+        }
+
+        //Rénitialisation de la fonction une fois que l'ennemi 2 a fait un aller-retour 
+        if(ennemigauche==12 && ennemidroite==12){
+            ennemigauche=0;
+            ennemidroite=0;
+            document.getElementById('imgcaseennemi64').src="Images/ennemi2.gif";
+        }
+
+        //Permet au joueur de ne pas perdre toute sa vie quand il touche un ennemi
+        if(viepartour==1){
+            setTimeout("viepartour2()",1000);
+        }
+    }
+    
+
+    function viepartour2(){
+        //Rénitialise la variable viepartour
+        viepartour=0;
+    }
+
+    
+
+/*Fonction concernant la barre de vie */
+    
+    //Création d'un intervalle de temps
+    var intervallebarredevie = setInterval("barredevie()",100);
+
+
+    function barredevie(){
+        
+        //Si le personnage et l'ennemi 1 se situe sur la même case alors le personnage perd un coeur
+        if(placeennemi1==place || placeennemi2==place){
+            if(viepartour==0){
+                compteurvie=compteurvie-1;
+                viepartour=1;
+                document.getElementById('bruitcri').src="Musiques/cri1.mp3";  
+            }
+        }
+    
+        //Affichage de la barre de vie avec 2 coeurs
+        if(compteurvie==2){
+            document.getElementById('vie').src="Images/2vies.png";
+        }
+    
+        //Affichage de la barre de vie avec 1 coeur
+        if(compteurvie==1){
+            document.getElementById('vie').src="Images/1vie.gif";
+        }
+
+        //Si la vie du personnage tombe à zéro alors le joueur a perdu
+        if(compteurvie==0){
+
+            //Habillage
+            document.getElementById('imggameover').style.height="170px";
+            document.getElementById('imggameover').style.width="360px";
+            document.getElementById('imggameover').style.marginLeft="-5px";
+            document.getElementById('imggameover').style.marginRight="-800px";
+            document.getElementById('imggameover').style.marginTop="-10px";
+            document.getElementById('imggameover').style.marginBottom="-800px";
+
+            //Affichage ou non de certains éléments
+            document.getElementById('globalite').style.display="none";
+            document.getElementById('tableau').style.display="none";
+            document.getElementById('imggameover').style.display="block";
+            document.getElementById('imgrejouer').style.display="block";
+            
+            document.getElementById('fondsonore').src="";
+            document.getElementById('bruitcri').src="";    
+            document.getElementById('fondgameover').src="Musiques/Gameover.mp3";  
+            document.getElementById('vie').src="Images/0vie.png";
+
+            //Stoppe les timer (interval)
+            clearInterval(intervalleennemi1);
+            clearInterval(intervalleennemi2);
+            clearInterval(intervallebarredevie);
+            
+        } 
+
+        //Quand on appuie sur le bouton il parait s'enfoncer
+        document.getElementById('imgrejouer').onmousedown=function(){
+            document.getElementById('imgrejouer').src="Images/rejouer2.png";
+        }
+
+        //Quand on relache le bouton la page s'actualise
+        document.getElementById('imgrejouer').onmouseup=function(){
+            document.getElementById('imgrejouer').src="Images/vide.png";
+            location.reload();
+        }
+    }
+
+
+</script>
+
+</body>
+
+</html>
+
