@@ -1,0 +1,61 @@
+<html>
+
+
+<!-- EN-TETE ************************************************************************************************************************* -->
+<head>
+
+	<!-- Précise au navigateur que les caractères qu'il rencontrera dans la page seront codés selon la norme de codage «ISO-8859-1» -->
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
+	
+	<!-- Titre de la page s'affichant dans l'onglet -->
+	<title>PAC-MAN</title>
+
+</head>
+
+
+<!--********************************************************************************************************************************* -->
+<body style="background:url(images/fond.png); background-repeat:no-repeat; background-position:center center;">
+
+<p style="display:block; margin:auto;">
+	<img src="images/titre.png" style="display:block; margin:auto; margin-top:220px;"/>
+	<img id="unJoueur" src="images/boutonunjoueur.png" onclick="self.location.href='unjoueur.htm'" style="display:block; margin:auto; margin-top:25px;"/>
+	<img id="deuxJoueurs" src="images/boutondeuxjoueurs.png" onclick="self.location.href='deuxjoueurs.htm'" style="display:block; margin:auto; margin-top:35px;"/> 
+</p>
+
+<audio id="musique" src="sons/Theme.mp3" controls autoplay style="display:block; margin:auto; margin-top:30px; width:220px;"> </audio>
+
+<!-- SCRIPT ************************************************************************************************************************* -->
+<script language="javascript">
+
+document.getElementById('unJoueur').onmouseout=function(){
+    document.getElementById('unJoueur').src="Images/boutonunjoueur.png";
+}
+
+document.getElementById('unJoueur').onmouseover=function(){
+    document.getElementById('unJoueur').src="Images/boutonunjoueursurvol.png";
+}
+
+document.getElementById('unJoueur').onmousedown=function(){
+    document.getElementById('unJoueur').src="Images/boutonunjoueurappuyer.png";
+}
+
+document.getElementById('deuxJoueurs').onmouseout=function(){
+    document.getElementById('deuxJoueurs').src="Images/boutondeuxjoueurs.png";
+}
+
+document.getElementById('deuxJoueurs').onmouseover=function(){
+    document.getElementById('deuxJoueurs').src="Images/boutondeuxjoueurssurvol.png";
+}
+
+document.getElementById('deuxJoueurs').onmousedown=function(){
+    document.getElementById('deuxJoueurs').src="Images/boutondeuxjoueursappuyer.png";
+}
+
+</script>
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,760 @@
+<html>
+
+
+<!-- EN-TETE ************************************************************************************************************************* -->
+<head>
+
+	<!-- Précise au navigateur que les caractères qu'il rencontrera dans la page seront codés selon la norme de codage «ISO-8859-1» -->
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
+	
+	<!-- Titre de la page s'affichant dans l'onglet -->
+	<title>PAC-MAN</title>
+
+</head>
+
+
+<!--********************************************************************************************************************************* -->
+<body>
+
+<!-- Zone de dessin où s'affichera le jeu -->
+	<canvas id="canvas" height="544px" width="736px" style="display:block; margin:auto; border:black solid 1px; background-color:#FAE4DF;"></canvas>
+	<img id="gameover" src="images/gameover.png" height="544px" width="736px" style="display:block; margin:auto;"/>
+	<img id="winner" src="images/winner.png" height="544px" width="736px" style="display:block; margin:auto;"/>
+	<img id="rejouer" src="images/rejouer.png" width="135px" style="position:absolute; top:275px; left:47%" onclick="self.location.href='deuxjoueurs.htm'"/>
+	<img id="menu" src="images/retouraumenu.png"  width="120px" style="position:absolute; top:375px; left:47.3%" onclick="self.location.href='menu.htm'"/>
+
+	<p id="compteurDePoints" style="text-align:center;"></p>
+
+<!-- SCRIPT ************************************************************************************************************************* -->
+<script language="javascript">
+
+/* Ne pas oublier d'appeler le canvas et son contexte */
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
+var bloc1 = new Image();
+bloc1.src = "images/bloccomplet.png";
+
+var bloc2 = new Image();
+bloc2.src = "images/blocunpeucasse.png";
+
+var bloc3 = new Image();
+bloc3.src = "images/blocvraimentcasse.png";
+
+var bloc4 = new Image();
+bloc4.src = "images/bloccasse.png";
+
+var bloc5 = new Image();
+bloc5.src = "images/bloccompletementcasse.png";
+
+var gateaufraise= new Image();
+gateaufraise.src = "images/gateaufraise.png";
+
+var petitefraise= new Image();
+petitefraise.src = "images/petitefraise.png";
+
+var grossefraise= new Image();
+grossefraise.src = "images/grossefraise.png";
+
+var lapin1face= new Image();
+lapin1face.src = "images/lapin1face.png";
+
+var lapin1gauche= new Image();
+lapin1gauche.src = "images/lapin1gauche.png";
+
+var lapin1droite= new Image();
+lapin1droite.src = "images/lapin1droite.png";
+
+var lapin1dos= new Image();
+lapin1dos.src = "images/lapin1dos.png";
+
+var lapin2face= new Image();
+lapin2face.src = "images/lapin2face.png";
+
+var lapin2gauche= new Image();
+lapin2gauche.src = "images/lapin2gauche.png";
+
+var lapin2droite= new Image();
+lapin2droite.src = "images/lapin2droite.png";
+
+var lapin2dos= new Image();
+lapin2dos.src = "images/lapin2dos.png";
+
+var lapin3face= new Image();
+lapin3face.src = "images/lapin3face.png";
+
+var lapin3gauche= new Image();
+lapin3gauche.src = "images/lapin3gauche.png";
+
+var lapin3droite= new Image();
+lapin3droite.src = "images/lapin3droite.png";
+
+var lapin3dos= new Image();
+lapin3dos.src = "images/lapin3dos.png";
+
+var oursface= new Image();
+oursface.src = "images/oursface.png";
+
+var oursgauche= new Image();
+oursgauche.src = "images/oursgauche.png";
+
+var oursdroite= new Image();
+oursdroite.src = "images/oursdroite.png";
+
+var oursdos= new Image();
+oursdos.src = "images/oursdos.png";
+
+document.getElementById("gameover").style.display="none";
+document.getElementById("winner").style.display="none";
+document.getElementById("rejouer").style.display="none";
+document.getElementById("menu").style.display="none";
+
+document.getElementById('rejouer').onmouseout=function(){
+    document.getElementById('rejouer').src="Images/rejouer.png";
+}
+
+document.getElementById('rejouer').onmouseover=function(){
+    document.getElementById('rejouer').src="Images/rejouer2.png";
+}
+
+document.getElementById('menu').onmouseout=function(){
+    document.getElementById('menu').src="Images/retouraumenu.png";
+}
+
+document.getElementById('menu').onmouseover=function(){
+    document.getElementById('menu').src="Images/retouraumenu2.png";
+}
+
+tab=[
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],		//0
+		[1, 4, 4, 4, 4, 1, 4, 4, 1, 4, 4, 1, 4, 4, 1, 4, 4, 1, 4, 4, 4, 4, 1],		//1
+		[1, 4, 1, 4, 1, 1, 4, 1, 1, 1, 4, 1, 4, 1, 1, 1, 4, 1, 1, 4, 1, 4, 1],		//2
+		[1, 4, 1, 4, 4, 4, 4, 4, 1, 1111, 4, 1, 4, 1, 1111, 4, 4, 4, 4, 4, 1, 4, 1],//3
+		[1, 4, 1, 11, 1, 4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 4, 1, 111, 1, 4, 1],	//4
+		[1, 4, 4, 4, 1, 4, 1, 111, 1, 4, 1, 11, 1, 4, 1, 1, 1, 4, 1, 4, 4, 4, 1],	//5
+		[1, 4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 4, 1],		//6
+		[1, 4, 4, 4, 1, 4, 1, 1, 4, 1, 1, 2, 1, 1, 4, 1, 1, 4, 1, 4, 4, 4, 1],		//7
+		[1, 111, 1, 1, 1, 4, 4, 1, 4, 1, 4, 4, 4, 1, 4, 1, 4, 4, 1, 1, 11, 1, 1],	//8
+		[1, 4, 4, 4, 1, 4, 1, 1, 4, 1, 1, 1, 1, 1111, 4, 1, 111, 4, 1, 4, 4, 4, 1],	//9
+		[1, 4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 11111, 4, 1],	//10
+		[1, 4, 4, 4, 1, 4, 1, 1, 1, 4, 1, 1, 11111, 4, 1, 1, 1, 4, 1, 4, 4, 4, 1],	//11
+		[1, 4, 11, 1, 1, 4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1, 4, 1, 1, 1, 4, 1],		//12
+		[1, 4, 1, 4, 4, 4, 4, 4, 1, 1, 4, 1, 4, 1, 11, 4, 4, 4, 4, 4, 1, 4, 1],		//13
+		[1, 4, 1111, 4, 1, 11, 4, 1, 1, 1, 4, 1, 4, 1, 1, 1, 4, 1, 1, 4, 1111, 4, 1],//14
+		[1, 4, 4, 4, 4, 1, 4, 4, 1, 4, 4, 1, 4, 4, 1, 4, 4, 1, 4, 4, 4, 4, 1],		//15
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]		//16
+	];
+
+tabEnnemis=[
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],	//0
+		[1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1],	//1
+		[1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1],	//2
+		[1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1],	//3
+		[1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1],	//4
+		[1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1],	//5
+		[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],	//6
+		[1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1],	//7
+		[1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1],	//8
+		[1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1],	//9
+		[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1],	//10
+		[1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1],	//11
+		[1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1],	//12
+		[1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1],	//13
+		[1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1],	//14
+		[1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1],	//15
+		[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]	//16
+	];
+
+
+var affichageL;//Lignes
+var affichageC;//Colonnes
+
+var l=6;
+var c=11;
+tab[l][c]=3;
+var sens=3;
+var compteur=0;
+var deplacementPerso;
+var deplacementPerso2;
+
+var sensJoueur2=1;
+var ldeux=8;
+var cdeux=11;
+
+var lEnnemi1=8;
+var cEnnemi1=10;
+var sensEnnemi1=parseInt(Math.random()*(5-1)+1);
+tabEnnemis[lEnnemi1][cEnnemi1]=5;
+var changementPositionEnnemi1=0;
+
+tabEnnemis[ldeux][cdeux]=6;
+
+var lEnnemi3=8;
+var cEnnemi3=12;
+var sensEnnemi3=parseInt(Math.random()*(5-1)+1);
+tabEnnemis[lEnnemi3][cEnnemi3]=7;
+var changementPositionEnnemi3=0;
+
+function dessinerCarte(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);//Efface le contenu du canvas
+
+	for(affichageL=0 ; affichageL<17 ; affichageL++){//AffichageL prend pour valeur initiale 0. Tant que la variable affichageL est inférieur à 20 , à chaque tour elle augmente de 1.
+
+		for(affichageC=0 ; affichageC<23 ; affichageC++){//AffichageC prend pour valeur initiale 0. Tant que la variable affichageC est inférieur à 30 , à chaque tour elle augmente de 1.
+
+			switch(tab[affichageL][affichageC]){
+
+				case 1://Quand la case est égale à 1 afficher un carré de couleur
+					ctx.drawImage(bloc1, (affichageC*32), (affichageL*32), 32, 32);	
+				break;
+
+				case 11://Quand la case est égale à 1 afficher un carré de couleur
+					ctx.drawImage(bloc2, (affichageC*32), (affichageL*32), 32, 32);	
+				break;
+
+				case 111://Quand la case est égale à 1 afficher un carré de couleur
+					ctx.drawImage(bloc3, (affichageC*32), (affichageL*32), 32, 32);	
+				break;
+
+				case 1111://Quand la case est égale à 1 afficher un carré de couleur
+					ctx.drawImage(bloc4, (affichageC*32), (affichageL*32), 32, 32);	
+				break;
+
+				case 11111://Quand la case est égale à 1 afficher un carré de couleur
+					ctx.drawImage(bloc5, (affichageC*32), (affichageL*32), 32, 32);	
+				break;
+
+				case 2://Quand la case est égale à 2 
+					ctx.drawImage(gateaufraise, (affichageC*32), (affichageL*32)+10, 32, 10);
+				break;
+
+				case 3://Quand la case est égale à 3 
+					if(sens==1){
+						ctx.drawImage(oursdos, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sens==2){
+						ctx.drawImage(oursdroite, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sens==3){
+						ctx.drawImage(oursface, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sens==4){
+						ctx.drawImage(oursgauche, (affichageC*32), (affichageL*32), 32, 32);
+					}
+				break;
+
+				case 4://Quand la case est égale à 4 
+					ctx.drawImage(petitefraise, (affichageC*32)+10, (affichageL*32)+10, 7, 7);
+				break;
+
+				case 44://Quand la case est égale à 44
+					ctx.drawImage(grossefraise, (affichageC*32)+3, (affichageL*32)+3, 26, 26);
+				break;
+
+			}
+		}
+	}
+	dessinerEnnemis();
+}
+
+function dessinerEnnemis(){
+
+	for(affichageL=0 ; affichageL<17 ; affichageL++){//AffichageL prend pour valeur initiale 0. Tant que la variable affichageL est inférieur à 20 , à chaque tour elle augmente de 1.
+
+		for(affichageC=0 ; affichageC<23 ; affichageC++){//AffichageC prend pour valeur initiale 0. Tant que la variable affichageC est inférieur à 30 , à chaque tour elle augmente de 1.
+
+			switch(tabEnnemis[affichageL][affichageC]){
+
+				case 5://Quand la case est égale à 5
+					if(sensEnnemi1==1){
+						ctx.drawImage(lapin1dos, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sensEnnemi1==2){
+						ctx.drawImage(lapin1droite, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sensEnnemi1==3){
+						ctx.drawImage(lapin1face, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sensEnnemi1==4){
+						ctx.drawImage(lapin1gauche, (affichageC*32), (affichageL*32), 32, 32);
+					}
+				break;
+
+				case 6://Quand la case est égale à 6 
+					if(sensJoueur2==1){
+						ctx.drawImage(lapin2dos, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sensJoueur2==2){
+						ctx.drawImage(lapin2droite, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sensJoueur2==3){
+						ctx.drawImage(lapin2face, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sensJoueur2==4){
+						ctx.drawImage(lapin2gauche, (affichageC*32), (affichageL*32), 32, 32);
+					}
+				break;
+
+				case 7://Quand la case est égale à 7 
+					if(sensEnnemi3==1){
+						ctx.drawImage(lapin3dos, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sensEnnemi3==2){
+						ctx.drawImage(lapin3droite, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sensEnnemi3==3){
+						ctx.drawImage(lapin3face, (affichageC*32), (affichageL*32), 32, 32);
+					}
+					if(sensEnnemi3==4){
+						ctx.drawImage(lapin3gauche, (affichageC*32), (affichageL*32), 32, 32);
+					}
+				break;
+			}
+		}
+	}
+}
+
+/* Au chargement de la page appeler les fonctions ci-dessous */
+window.onload = function(){
+	dessinerCarte();
+	setTimeout("liberation()",6000);
+}
+
+var ennemi1;
+var ennemi3;
+
+function deplacement(){
+
+	if(sens==1){
+		l=l-1;
+		tab[l+1][c]=0;	
+
+		if(tab[l][c]==4){
+			compteur=compteur+1;
+		}
+
+		if(tab[l][c]==1 || tab[l][c]==11 || tab[l][c]==111 || tab[l][c]==1111 || tab[l][c]==11111 || tab[l][c]==2){
+			l=l+1
+		}
+	}
+
+	if(sens==2){
+		c=c+1;
+		tab[l][c-1]=0;
+
+		if(tab[l][c]==4){
+			compteur=compteur+1;
+		}
+
+		if(tab[l][c]==1 || tab[l][c]==11 || tab[l][c]==111 || tab[l][c]==1111 || tab[l][c]==11111 || tab[l][c]==2){
+			c=c-1
+		}
+	}
+
+	if(sens==3){
+		l=l+1;
+		tab[l-1][c]=0;
+
+		if(tab[l][c]==4){
+			compteur=compteur+1;
+		}
+
+		if(tab[l][c]==1 || tab[l][c]==11 || tab[l][c]==111 || tab[l][c]==1111 || tab[l][c]==11111 || tab[l][c]==2){
+			l=l-1
+		}
+	}
+
+	if(sens==4){
+		c=c-1;
+		tab[l][c+1]=0;
+
+		if(tab[l][c]==4){
+			compteur=compteur+1;
+		}
+
+		if(tab[l][c]==1 || tab[l][c]==11 || tab[l][c]==111 || tab[l][c]==1111 || tab[l][c]==11111 || tab[l][c]==2){
+			c=c+1
+		}
+
+	}
+
+	if(tab[l][c]==44){
+		compteur=compteur+50;
+		clearInterval(ennemi1);
+		clearInterval(ennemi3);
+		clearInterval(blocage);
+		clearInterval(renitialisation);
+
+		setTimeout("interval()",7000);
+	}
+
+
+	document.getElementById("compteurDePoints").innerHTML=compteur;
+	tab[l][c]=3;
+	
+	if(tab[l][c]==tab[ldeux][cdeux] || tab[l][c]==tab[lEnnemi1][cEnnemi1] || tab[l][c]==tab[lEnnemi3][cEnnemi3]){
+		gameOver();
+	}
+
+	dessinerCarte();
+
+	if(aToutRecup()){
+		aWinnerIsYou();
+	}
+
+}
+
+function deplacementJoueurDeux(){
+
+	if(sensJoueur2==1){
+		ldeux=ldeux-1;
+		tabEnnemis[ldeux+1][cdeux]=0;	
+
+		if(tab[ldeux][cdeux]==1 || tab[ldeux][cdeux]==11 || tab[ldeux][cdeux]==111 || tab[ldeux][cdeux]==1111 || tab[ldeux][cdeux]==11111 || tab[ldeux][cdeux]==2 || tabEnnemis[ldeux][cdeux]==tabEnnemis[lEnnemi1][cEnnemi1] || tabEnnemis[ldeux][cdeux]==tabEnnemis[lEnnemi3][cEnnemi3]){
+			ldeux=ldeux+1
+		}
+	}
+
+	if(sensJoueur2==2){
+		cdeux=cdeux+1;
+		tabEnnemis[ldeux][cdeux-1]=0;
+
+		if(tab[ldeux][cdeux]==1 || tab[ldeux][cdeux]==11 || tab[ldeux][cdeux]==111 || tab[ldeux][cdeux]==1111 || tab[ldeux][cdeux]==11111 || tab[ldeux][cdeux]==2 || tabEnnemis[ldeux][cdeux]==tabEnnemis[lEnnemi1][cEnnemi1] || tabEnnemis[ldeux][cdeux]==tabEnnemis[lEnnemi3][cEnnemi3]){
+			cdeux=cdeux-1
+		}
+	}
+
+	if(sensJoueur2==3){
+		ldeux=ldeux+1;
+		tabEnnemis[ldeux-1][cdeux]=0;
+
+		if(tab[ldeux][cdeux]==1 || tab[ldeux][cdeux]==11 || tab[ldeux][cdeux]==111 || tab[ldeux][cdeux]==1111 || tab[ldeux][cdeux]==11111 || tab[ldeux][cdeux]==2 || tabEnnemis[ldeux][cdeux]==tabEnnemis[lEnnemi1][cEnnemi1] || tabEnnemis[ldeux][cdeux]==tabEnnemis[lEnnemi3][cEnnemi3]){
+			ldeux=ldeux-1
+		}
+	}
+
+	if(sensJoueur2==4){
+		cdeux=cdeux-1;
+		tabEnnemis[ldeux][cdeux+1]=0;
+
+		if(tab[ldeux][cdeux]==1 || tab[ldeux][cdeux]==11 || tab[ldeux][cdeux]==111 || tab[ldeux][cdeux]==1111 || tab[ldeux][cdeux]==11111 || tab[ldeux][cdeux]==2 || tabEnnemis[ldeux][cdeux]==tabEnnemis[lEnnemi1][cEnnemi1] || tabEnnemis[ldeux][cdeux]==tabEnnemis[lEnnemi3][cEnnemi3]){
+			cdeux=cdeux+1
+		}
+
+	}
+
+	tabEnnemis[ldeux][cdeux]=6;
+
+	if(tab[l][c]==tab[ldeux][cdeux]){
+		gameOver();
+	}
+
+	dessinerCarte();
+
+}
+
+deplacementPerso = setInterval("deplacement()",350);
+deplacementPerso2 = setInterval("deplacementJoueurDeux()",350);
+
+
+
+function interval(){
+	ennemi1 = setInterval("Ennemi1()",400);
+	ennemi3 = setInterval("Ennemi3()",400);
+	blocage = setInterval("blocageEnnemis()",100);
+	renitialisation = setInterval("renitialisationPositions()",2000);
+}
+
+
+/* Quand on appuie sur la touche... */
+document.onkeydown = function(evt) {
+
+	switch(evt.keyCode) {
+
+		case 38: //Flèche du haut: déplacement vers le haut
+		sens=1;
+		break;
+
+		case 39: //Flèche droite: déplacement vers la droite
+		sens=2;
+		break;
+
+		case 40: //Flèche du bas: déplacement vers le bas
+		sens=3;
+		break;
+
+		case 37: //Flèche gauche: déplacement vers la gauche
+		sens=4;
+		break;
+
+		case 90: //déplacement vers le haut
+		sensJoueur2=1;
+		break;
+
+		case 68: //déplacement vers la droite
+		sensJoueur2=2;
+		break;
+
+		case 83: //déplacement vers le bas
+		sensJoueur2=3;
+		break;
+
+		case 81: //déplacement vers la gauche
+		sensJoueur2=4;
+		break;
+	}
+
+}
+
+
+
+
+
+function Ennemi1(){
+
+	if(changementPositionEnnemi1==0 &&
+		((tabEnnemis[lEnnemi1-1][cEnnemi1]==0 && tabEnnemis[lEnnemi1][cEnnemi1+1]==0 && tabEnnemis[lEnnemi1+1][cEnnemi1]==0) ||
+		(tabEnnemis[lEnnemi1][cEnnemi1+1]==0 && tabEnnemis[lEnnemi1+1][cEnnemi1]==0 && tabEnnemis[lEnnemi1][cEnnemi1-1]==0) ||
+		(tabEnnemis[lEnnemi1+1][cEnnemi1]==0 && tabEnnemis[lEnnemi1][cEnnemi1-1]==0 && tabEnnemis[lEnnemi1-1][cEnnemi1]==0) ||
+		(tabEnnemis[lEnnemi1][cEnnemi1-1]==0 && tabEnnemis[lEnnemi1-1][cEnnemi1]==0 && tabEnnemis[lEnnemi1][cEnnemi1+1]==0))){
+		
+		sensEnnemi1=parseInt(Math.random()*(5-1)+1);
+		changementPositionEnnemi1=1;
+	}
+
+	if(sensEnnemi1==1){
+
+		lEnnemi1=lEnnemi1-1;
+		tabEnnemis[lEnnemi1+1][cEnnemi1]=0;
+
+		if(tabEnnemis[lEnnemi1][cEnnemi1]==1 || 
+			tab[lEnnemi1][cEnnemi1]==2 ||
+			tabEnnemis[lEnnemi1][cEnnemi1]==tabEnnemis[ldeux][cdeux] ||
+			tabEnnemis[lEnnemi1][cEnnemi1]==tabEnnemis[lEnnemi3][cEnnemi3] ){
+			
+			lEnnemi1=lEnnemi1+1;
+		}
+	}
+
+	if(sensEnnemi1==2){
+		cEnnemi1=cEnnemi1+1;
+		tabEnnemis[lEnnemi1][cEnnemi1-1]=0;
+
+		if(tabEnnemis[lEnnemi1][cEnnemi1]==1 || 
+			tab[lEnnemi1][cEnnemi1]==2 ||
+			tabEnnemis[lEnnemi1][cEnnemi1]==tabEnnemis[ldeux][cdeux] ||
+			tabEnnemis[lEnnemi1][cEnnemi1]==tabEnnemis[lEnnemi3][cEnnemi3] ){
+			
+			cEnnemi1=cEnnemi1-1;
+		}
+	}
+
+	if(sensEnnemi1==3){
+		lEnnemi1=lEnnemi1+1;
+		tabEnnemis[lEnnemi1-1][cEnnemi1]=0;
+
+		if(tabEnnemis[lEnnemi1][cEnnemi1]==1 ||
+			tab[lEnnemi1][cEnnemi1]==2 ||
+			tabEnnemis[lEnnemi1][cEnnemi1]==tabEnnemis[ldeux][cdeux] ||
+			tabEnnemis[lEnnemi1][cEnnemi1]==tabEnnemis[lEnnemi3][cEnnemi3] ){
+			
+			lEnnemi1=lEnnemi1-1;
+		}
+	}
+
+	if(sensEnnemi1==4){
+		cEnnemi1=cEnnemi1-1;
+		tabEnnemis[lEnnemi1][cEnnemi1+1]=0;
+
+		if(tab[lEnnemi1][cEnnemi1]==0){
+			tab[lEnnemi1][cEnnemi1+1]=0;
+		}
+
+		if(tabEnnemis[lEnnemi1][cEnnemi1]==1 ||
+			tab[lEnnemi1][cEnnemi1]==2 ||
+			tabEnnemis[lEnnemi1][cEnnemi1]==tabEnnemis[ldeux][cdeux] ||
+			tabEnnemis[lEnnemi1][cEnnemi1]==tabEnnemis[lEnnemi3][cEnnemi3] ){
+			
+			cEnnemi1=cEnnemi1+1;
+		}
+	}
+
+		tabEnnemis[lEnnemi1][cEnnemi1]=5;
+
+	if(tab[l][c]==tab[lEnnemi1][cEnnemi1]){
+		gameOver();
+	}
+	
+	dessinerCarte();
+}
+
+function Ennemi3(){
+
+	if(changementPositionEnnemi3==0 &&
+		((tabEnnemis[lEnnemi3-1][cEnnemi3]==0 && tabEnnemis[lEnnemi3][cEnnemi3+1]==0 && tabEnnemis[lEnnemi3+1][cEnnemi3]==0) ||
+		(tabEnnemis[lEnnemi3][cEnnemi3+1]==0 && tabEnnemis[lEnnemi3+1][cEnnemi3]==0 && tabEnnemis[lEnnemi3][cEnnemi3-1]==0) ||
+		(tabEnnemis[lEnnemi3+1][cEnnemi3]==0 && tabEnnemis[lEnnemi3][cEnnemi3-1]==0 && tabEnnemis[lEnnemi3-1][cEnnemi3]==0) ||
+		(tabEnnemis[lEnnemi3][cEnnemi3-1]==0 && tabEnnemis[lEnnemi3-1][cEnnemi3]==0 && tabEnnemis[lEnnemi3][cEnnemi3+1]==0))){
+		
+		sensEnnemi3=parseInt(Math.random()*(5-1)+1);
+		changementPositionEnnemi3=1;
+	}
+
+	if(sensEnnemi3==1){
+		lEnnemi3=lEnnemi3-1;
+		tabEnnemis[lEnnemi3+1][cEnnemi3]=0;
+
+		if(tabEnnemis[lEnnemi3][cEnnemi3]==1 ||
+			tab[lEnnemi3][cEnnemi3]==2 ||
+			tabEnnemis[lEnnemi3][cEnnemi3]==tabEnnemis[lEnnemi1][cEnnemi1] ||
+			tabEnnemis[lEnnemi3][cEnnemi3]==tabEnnemis[ldeux][cdeux] ){
+
+			lEnnemi3=lEnnemi3+1;
+		}
+	}
+
+	if(sensEnnemi3==2){
+		cEnnemi3=cEnnemi3+1;
+		tabEnnemis[lEnnemi3][cEnnemi3-1]=0;
+
+		if(tabEnnemis[lEnnemi3][cEnnemi3]==1 ||
+			tab[lEnnemi3][cEnnemi3]==2 ||
+			tabEnnemis[lEnnemi3][cEnnemi3]==tabEnnemis[lEnnemi1][cEnnemi1] ||
+			tabEnnemis[lEnnemi3][cEnnemi3]==tabEnnemis[ldeux][cdeux] ){
+			
+			cEnnemi3=cEnnemi3-1;
+		}
+	}
+
+	if(sensEnnemi3==3){
+		lEnnemi3=lEnnemi3+1;
+		tabEnnemis[lEnnemi3-1][cEnnemi3]=0;
+
+		if(tabEnnemis[lEnnemi3][cEnnemi3]==1 ||
+			tab[lEnnemi3][cEnnemi3]==2 ||
+			tabEnnemis[lEnnemi3][cEnnemi3]==tabEnnemis[lEnnemi1][cEnnemi1] ||
+			tabEnnemis[lEnnemi3][cEnnemi3]==tabEnnemis[ldeux][cdeux] ){
+			
+			lEnnemi3=lEnnemi3-1;
+		}
+	}
+
+	if(sensEnnemi3==4){
+		cEnnemi3=cEnnemi3-1;
+		tabEnnemis[lEnnemi3][cEnnemi3+1]=0;
+
+		if(tabEnnemis[lEnnemi3][cEnnemi3]==1 ||
+			tab[lEnnemi3][cEnnemi3]==2 ||
+			tabEnnemis[lEnnemi3][cEnnemi3]==tabEnnemis[lEnnemi1][cEnnemi1] ||
+			tabEnnemis[lEnnemi3][cEnnemi3]==tabEnnemis[ldeux][cdeux] ){
+			
+			cEnnemi3=cEnnemi3+1;
+		}
+	}
+
+		tabEnnemis[lEnnemi3][cEnnemi3]=7;
+
+	if(tab[l][c]==tab[lEnnemi3][cEnnemi3]){
+		gameOver();
+	}
+
+	dessinerCarte();
+
+
+
+}
+
+function liberation(){
+
+	tab[7][11]=4;
+	sensEnnemi1=parseInt(Math.random()*(5-1)+1);
+	sensEnnemi3=parseInt(Math.random()*(5-1)+1);
+	ennemi1 =setInterval("Ennemi1()",400);
+	ennemi3 =setInterval("Ennemi3()",400);
+	tab[3][1]=44;
+	tab[15][18]=44;
+
+}
+
+function gameOver(){
+		document.getElementById("compteurDePoints").style.display="none";
+		document.getElementById("canvas").style.display="none";
+		document.getElementById("gameover").style.display="block";
+		document.getElementById("rejouer").style.display="block";
+		document.getElementById("menu").style.display="block";
+		clearInterval(ennemi1);
+		clearInterval(ennemi3);
+		clearInterval(deplacementPerso2);
+		clearInterval(deplacementPerso);
+}
+
+function aToutRecup(){
+	for(var i=0;i<tab.length;i++){
+		for(var j=0;j<tab.length;j++){
+			if(tab[i][j]==4 | tab[i][j]==44){
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+function aWinnerIsYou(){
+		document.getElementById("compteurDePoints").style.display="none";
+		document.getElementById("canvas").style.display="none";
+		document.getElementById("winner").style.display="block";
+		document.getElementById("rejouer").style.display="block";
+		document.getElementById("menu").style.display="block";
+		clearInterval(ennemi1);
+		clearInterval(ennemi3);
+		clearInterval(deplacementPerso2);
+		clearInterval(deplacementPerso);
+}
+
+function blocageEnnemis(){
+	if((sensEnnemi1==1 && 
+		(tabEnnemis[lEnnemi1-1][cEnnemi1]==1 || tabEnnemis[lEnnemi1-1][cEnnemi1]==tabEnnemis[ldeux][cdeux] || tabEnnemis[lEnnemi1-1][cEnnemi1]==tabEnnemis[lEnnemi3][cEnnemi3])) || 
+		(sensEnnemi1==2 && 
+		(tabEnnemis[lEnnemi1][cEnnemi1+1]==1 || tabEnnemis[lEnnemi1][cEnnemi1+1]==tabEnnemis[ldeux][cdeux] || tabEnnemis[lEnnemi1][cEnnemi1+1]==tabEnnemis[lEnnemi3][cEnnemi3])) || 
+		(sensEnnemi1==3 && 
+		(tabEnnemis[lEnnemi1+1][cEnnemi1]==1 || tabEnnemis[lEnnemi1+1][cEnnemi1]==tabEnnemis[ldeux][cdeux] || tabEnnemis[lEnnemi1+1][cEnnemi1]==tabEnnemis[lEnnemi3][cEnnemi3])) || 
+		(sensEnnemi1==4 && 
+		(tabEnnemis[lEnnemi1][cEnnemi1-1]==1 || tabEnnemis[lEnnemi1][cEnnemi1-1]==tabEnnemis[ldeux][cdeux] || tabEnnemis[lEnnemi1][cEnnemi1-1]==tabEnnemis[lEnnemi3][cEnnemi3]))
+		){
+	
+		sensEnnemi1=parseInt(Math.random()*(5-1)+1);
+	}
+
+	if((sensEnnemi3==1 && 
+		(tabEnnemis[lEnnemi3-1][cEnnemi3]==1 || tabEnnemis[lEnnemi3-1][cEnnemi3]==tabEnnemis[lEnnemi1][cEnnemi1] || tabEnnemis[lEnnemi3-1][cEnnemi3]==tabEnnemis[ldeux][cdeux])) || 
+		(sensEnnemi3==2 && 
+		(tabEnnemis[lEnnemi3][cEnnemi3+1]==1 || tabEnnemis[lEnnemi3][cEnnemi3+1]==tabEnnemis[lEnnemi1][cEnnemi1] || tabEnnemis[lEnnemi3][cEnnemi3+1]==tabEnnemis[ldeux][cdeux])) || 
+		(sensEnnemi3==3 && 
+		(tabEnnemis[lEnnemi3+1][cEnnemi3]==1 || tabEnnemis[lEnnemi3+1][cEnnemi3]==tabEnnemis[lEnnemi1][cEnnemi1] || tabEnnemis[lEnnemi3+1][cEnnemi3]==tabEnnemis[ldeux][cdeux])) || 
+		(sensEnnemi3==4 && 
+		(tabEnnemis[lEnnemi3][cEnnemi3-1]==1 || tabEnnemis[lEnnemi3][cEnnemi3-1]==tabEnnemis[lEnnemi1][cEnnemi1] || tabEnnemis[lEnnemi3][cEnnemi3-1]==tabEnnemis[ldeux][cdeux]))
+		){
+	
+		sensEnnemi3=parseInt(Math.random()*(5-1)+1);
+	}
+}
+
+var blocage = setInterval("blocageEnnemis()",100);
+
+function renitialisationPositions(){
+	changementPositionEnnemi1=0;
+	changementPositionEnnemi2=0;
+	changementPositionEnnemi3=0;
+}
+ 
+ var renitialisation = setInterval("renitialisationPositions()",2000);
+
+</script>
+
+
+</body>
+
+
+
+</html>
