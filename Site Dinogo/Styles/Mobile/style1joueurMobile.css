@@ -1,0 +1,119 @@
+/*Pour les écrans de largeur inférieure à 520px*/
+@media handheld, only screen and (max-width: 520px){
+
+* {/*Les marges intérieures et les bordures sont inclues dans la largeur width*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+article{
+    width: auto;
+    margin: 70px auto 180px auto;
+    padding: 10px;
+    text-align: center;
+    font-family: arial;
+    line-height: 22px;
+}
+
+article p img{
+	width: 30px;
+}
+
+table{
+	width: auto;
+	background: url("../../Images/Guide1j/fond.png") no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+	text-align: center;
+}
+
+table img{
+	display: inline-block;
+}
+
+.minuteur{
+	width: 40%;
+}
+
+.compteur{
+	width: 20%;
+}
+
+.dino{
+	width: 90%;
+}
+
+.pourcentage{
+	width: 35%;
+}
+
+.question{
+	width: 100%;
+}
+
+.reponses{
+	width: 100%;
+}
+
+.legendeMinuteur{
+	width: 40%;
+	margin-top: 2%;
+	margin-left: -10%;
+	position: absolute;
+	display: none;
+}
+
+.legendeCompteur{
+	width: 40%;
+	margin-top: -5%;
+	margin-left: -5%;
+	position: absolute;
+	display: none;
+}
+
+.legendeDino{
+	width: 50%;
+	margin-top: 38%;
+	margin-left: -50%;
+	position: absolute;
+	display: none;
+}
+
+.legendePourcentage{
+	width: 55%;
+	margin-top: 2%;
+	margin-left: -15%;
+	position: absolute;
+	display: none;
+}
+
+.legendeQuestion{
+	width: 45%;
+	margin-top: -15%;
+	right: 5%;
+	position: absolute;
+	display: none;
+}
+
+.legendeReponses{
+	width: 30%;
+	margin-top: -30%;
+	right: 5%;
+	position: absolute;
+	display: none;
+}
+
+.minuteur:hover ~ .legendeMinuteur, 
+.compteur:hover ~ .legendeCompteur,
+.dino:hover ~ .legendeDino, 
+.pourcentage:hover ~ .legendePourcentage, 
+.question:hover ~ .legendeQuestion,
+.reponses:hover ~ .legendeReponses{
+	display: inline-block;
+}
+
+
+}

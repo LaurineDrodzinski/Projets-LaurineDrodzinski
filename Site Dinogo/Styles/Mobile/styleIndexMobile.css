@@ -1,0 +1,54 @@
+/*Pour les écrans de largeur inférieure à 520px*/
+@media handheld, only screen and (max-width: 520px){
+
+* {/*Les marges intérieures et les bordures sont inclues dans la largeur width*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*Article contenant le texte*/
+.Article3{
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 180px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    line-height: 25px;
+    font-family: arial;
+    font-weight: bold;
+}
+
+.Article3 img{
+    width: 200px; 
+    margin-bottom:-30px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/*Articles contenant les images*/
+.EnsembleArticles1_2{
+    width: auto;
+    margin-top: 70px;
+}
+
+.EnsembleArticles1_2 article{
+    width: 100%;
+    margin-top:10px;
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+}
+
+.EnsembleArticles1_2 img{
+    width: 100%;
+    max-width: 500px;
+}
+
+.Article2{
+    display: none;/*Le gif est trop lourd pour un mobile -> ralentit le chargemetn*/
+}
+
+}

@@ -1,0 +1,298 @@
+/*Pour les écrans de largeur inférieure à 520px*/
+@media handheld, only screen and (max-width: 520px){
+    
+* {/*Les marges intérieures et les bordures sont inclues dans la largeur width*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/*CORPS******************************************************************/
+body{
+    width: auto;
+    background: url("../../Images/General/fond.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*EN-TETE****************************************************************/
+header{
+    width: auto;
+    height: 90px;
+    margin-top: -8px;
+    margin-left:-8px;
+    background-color: #FCE4BD;
+}
+
+.Header_Stego{
+  display: none;
+}
+
+h1{
+  margin-top: 20px;
+  margin-left: 85px;
+  position: absolute;
+  font-size: 50px;
+  font-family: Trebuchet MS;
+  color: #142952;
+}
+
+/*Animation des bonhommes Lego®*/ 
+.contener_slideshow{
+  width: 70px;
+  height: 90px;
+  top: -3px;
+  left: 10px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.contener_slideshow img{
+    height: 90px;
+    position: absolute;
+}
+
+.slid_1{
+    left: 0px;
+}
+
+.slid_2{
+    left: 70px;
+}
+
+.slid_3{
+    left: 140px;
+}
+
+.slid_4{
+    left: 210px;
+}
+
+.slid_5{
+    left: 280px;
+}
+
+.contener_slide{
+  width: 70px;
+  height: 90px;
+  left: 0px;
+  position: absolute;
+  /*Il est nécessaire que l'animation soit compatible avec tous les navigateurs, 
+  c'est pourquoi on utilise différents préfixes (au niveau de toutes les étapes) 
+  -> de même pour les autres animations*/
+  -webkit-animation: anim_slide 15s infinite;
+  -moz-animation: anim_slide 15s infinite;
+  -ms-animation: anim_slide 15s infinite;
+  -o-animation: anim_slide 15s infinite;
+  animation: anim_slide 15s infinite;
+}
+
+@keyframes anim_slide {
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+}
+
+@-webkit-keyframes anim_slide{
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+} 
+
+@-moz-keyframes anim_slide{
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+} 
+
+@-ms-keyframes anim_slide{
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+} 
+
+@-o-keyframes anim_slide{
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+}
+/*Fin de l'animation*/
+
+
+/*NAVIGATION*************************************************************/
+nav{
+    position: relative;
+    z-index: 10;
+    font-size: 12px;
+    margin-left: -8px;
+}
+
+nav ul{
+    margin: 0px;
+    padding: 0px; 
+    list-style: none;
+}
+
+nav ul li{
+    width: 25%;
+    height: 55px;
+    float: left;
+    background-color: #82A4D7; 
+    text-align: center;
+    font-weight: bold;
+}
+
+.MenuImages{
+    height: 30px;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+nav ul a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li ul{
+    margin-top: 3px;
+    display: none;
+    float: none;
+    line-height: 55px;
+}
+
+.Menu:hover{
+    box-shadow: 0px 0px 15px 1px #081C39 inset;
+}
+
+.Menu:hover ul{
+    display: block;
+}
+
+.SousMenu{
+    width: 100%;
+    background-color: #C4D7F4;
+}
+
+.SousMenu:hover{
+    background-color: #A9C1E5;
+    box-shadow: 0px 0px 15px 1px #21406F inset;
+}
+
+/*ARTICLES****************************************************************/
+article{
+    background-color: white;
+    border: solid orange 3px;
+    border-radius: 10px; 
+}
+
+/*HAUT ET BAS DE PAGE*****************************************************/
+.BasdePage{
+  top: 5px;
+  right: 15px;
+  position: fixed;
+  font-family: Trebuchet MS;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.HautdePage{
+  bottom: 5px;
+  right: 15px;
+  position: fixed;
+  font-family: Trebuchet MS;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.BasdePage a, .HautdePage a{
+  text-decoration: none;
+  color: #142952;
+}
+
+/*PIED DE PAGE************************************************************/
+
+html{ /*Permet de réaliser le pied de page*/
+  position: relative;
+  min-height: 100%;
+}
+
+footer{
+  width: 100%;
+  height: 160px;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: #38537A;
+  z-index:0;
+}
+
+footer ul{
+  margin: 0px;
+  padding: 0px;
+}
+
+footer ul li{
+  width: auto;
+  list-style: none;
+  text-align: center;
+  font-family: Trebuchet MS;
+  font-size: 12px;
+  line-height: 26px;
+}
+
+footer a{
+  text-decoration: none;
+  color: black;
+}
+
+footer p{
+  text-align: center;
+  font-family: Trebuchet MS;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+}
