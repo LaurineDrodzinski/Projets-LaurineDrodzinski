@@ -1,0 +1,60 @@
+/*Pour les écrans de largeur inférieure à 520px*/
+@media handheld, only screen and (max-width: 520px){
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+article{ 
+    width: auto;
+    margin-top: 10px;
+    padding: 20px;
+    font-family: arial;
+    line-height: 22px;    
+    text-align: center;
+}
+
+h2{
+    color: #5B83BF;
+    text-align: center;
+}
+
+article a{
+    color: #5B83BF;
+    text-decoration: none;
+}
+
+article a:hover{
+    color: orange;
+}
+
+article img{
+    width: 85%;
+    max-width: 500px;
+}
+
+.EnsembleArticles1_2, .EnsembleArticles4_5{
+    width: auto;
+}
+
+.Article1{
+    margin-top: 70px;
+}
+
+.Article2{
+    text-align: center;
+}
+
+.Article4{
+    text-align: center;
+}
+
+.Article6{
+    margin-bottom: 180px;
+}
+
+}

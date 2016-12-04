@@ -1,0 +1,51 @@
+/*Pour les écrans de largeur supérieure à 521px*/
+@media screen and (min-width: 521px){
+
+
+/*Article contenant le texte*/
+.Article3{
+    width: 70%;
+    margin-bottom:100px;
+    margin-left: auto;   
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    line-height: 25px;
+    font-family: arial;
+    font-weight: bold;
+}
+
+.Article3 img{
+    width: 200px;  
+    margin-bottom:-30px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+/*Articles contenant les images*/
+.EnsembleArticles1_2{
+    width: 90%;
+    margin-top: 130px;
+    margin-left: auto;
+    margin-right: auto; 
+    text-align: center;
+}
+
+.EnsembleArticles1_2 article{
+    width: 35%;
+    height: 100%;
+    min-width: 200px;
+    margin: 0px 20px 40px 20px;
+    padding: 20px 20px 20px 20px;
+    display: inline-block;
+}
+
+.EnsembleArticles1_2 img{
+    width: 100%;
+    max-width: 500px;
+    min-width: 200px;
+}
+
+
+}

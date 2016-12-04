@@ -1,0 +1,98 @@
+/*Pour les écrans de largeur supérieure à 521px*/
+@media screen and (min-width: 521px){
+
+
+article{ 
+    min-width: 325px;
+    padding: 20px;
+    vertical-align: middle;
+    font-family: arial;
+    line-height: 22px;
+}
+
+h2{
+    color: #5B83BF;
+    text-align: center;
+}
+
+article a{
+    color: #5B83BF;
+    text-decoration: none;
+}
+
+article a:hover{
+    color: orange;
+}
+
+.EnsembleArticles1_2{
+    width: 82%;
+    margin-top: 100px; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.Article1{
+    width: 45%;
+    margin: 20px; 
+    display: inline-block;
+    text-align: justify;
+}
+
+.Article2{
+    width: 25%;
+    margin: 20px; 
+    display: inline-block;
+    text-align: center;
+}
+
+.Article2 img{
+    width: 75%;
+    max-width: 500px;
+    min-width: 200px;
+}
+
+.Article3{
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+.EnsembleArticles4_5{
+    width: 82%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.Article4{
+    width: 25%;
+    margin: 20px; 
+    display: inline-block;
+    text-align: center;
+}
+
+.Article4 img{
+    width: 75%;
+    margin: 20px; 
+    max-width: 500px;
+    min-width: 200px;
+}
+
+.Article5{
+    width: 45%;
+    display: inline-block;
+    text-align: justify;
+}
+
+.Article6{
+    width: 65%;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+
+}

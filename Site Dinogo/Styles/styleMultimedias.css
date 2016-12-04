@@ -1,0 +1,50 @@
+/*Pour les écrans de largeur supérieure à 521px*/
+@media screen and (min-width: 521px){
+
+
+article{
+    width:70%;
+    margin: 150px auto 100px auto;  
+    padding: 45px 20px 45px 35px;  
+    background-color: white;
+    border: solid orange 3px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: georgia;
+}
+
+article ul{
+    width: 100%;
+    padding: 0px;
+    display: inline-block;
+    list-style: none;
+}
+
+article ul li{
+    width: 270px;
+    height: 150px;
+    margin: 10px;
+    float: left;
+}
+       
+article ul li img{
+    height: 135px;
+    position: relative;
+    z-index: 20;
+    border: 6px solid #424242;
+    -webkit-transition: height 0.4s, margin 0.4s, z-index 0.4s;
+    -moz-transition: height 0.4s, margin 0.4s, z-index 0.4s;
+    -ms-transition: height 0.4s, margin 0.4s, z-index 0.4s;
+    -o-transition: height 0.4s, margin 0.4s, z-index 0.4s;
+    transition: height 0.4s, margin 0.4s, z-index 0.4s;
+}
+          
+article ul li img:hover{
+    height: 270px;
+    margin-top: -65px;
+    margin-left: -100px;
+    z-index: 100;
+}
+
+
+}

@@ -1,0 +1,370 @@
+/*Pour les écrans de largeur supérieure à 521px*/
+@media screen and (min-width: 521px){
+
+
+/*CORPS******************************************************************/
+body{
+  width: auto;
+  min-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background: url("../Images/General/fond.jpg") fixed no-repeat;
+  background-size: 100% 100%;
+}
+
+
+/*EN-TETE****************************************************************/
+header{
+  width: auto;
+  height: 90px;
+  margin-top: -8px;
+  background-color: #FCE4BD;
+}
+
+.Header_Stego{
+  height: 90px;
+  margin-left: 60px;
+}
+
+h1{
+  margin-top: -85px;
+  margin-left: 280px;
+  position: absolute;
+  font-size: 60px;
+  font-family: Trebuchet MS;
+  color: #142952;
+}
+
+/*Animation des bonhommes Lego®*/ 
+.contener_slideshow{
+  width: 70px;
+  height: 90px;
+  top: -3px;
+  left: 5px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.contener_slideshow img{
+  height: 90px;
+  position: absolute;
+}
+
+.slid_1{
+  left: 0px;
+}
+
+.slid_2{
+  left: 70px;
+}
+
+.slid_3{
+  left: 140px;
+}
+
+.slid_4{
+  left: 210px;
+}
+
+.slid_5{
+  left: 280px;
+}
+
+.contener_slide{
+  width: 70px;
+  height: 90px;
+  left: 0px;
+  position: absolute;
+  /*Il est nécessaire que l'animation soit compatible avec tous les navigateurs, 
+  c'est pourquoi on utilise différents préfixes (au niveau de toutes les étapes) 
+  -> de même pour les autres animations*/
+  -webkit-animation: anim_slide 15s infinite;
+  -moz-animation: anim_slide 15s infinite;
+  -ms-animation: anim_slide 15s infinite;
+  -o-animation: anim_slide 15s infinite;
+  animation: anim_slide 15s infinite;
+}
+
+@keyframes anim_slide {
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+}
+
+@-webkit-keyframes anim_slide{
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+} 
+
+@-moz-keyframes anim_slide{
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+} 
+
+@-ms-keyframes anim_slide{
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+} 
+
+@-o-keyframes anim_slide{
+  0% {left: 0px;}
+  10% {left: 0px;}
+  20% {left: -70px;}
+  30% {left: -70px;}
+  40% {left: -140px;}
+  50% {left: -140px;}
+  60% {left: -210px;}
+  70% {left: -210px;}
+  80% {left: -280px;}
+  90% {left: -280px;}
+}
+/*Fin de l'animation*/
+
+
+/*NAVIGATION*************************************************************/
+nav{
+  position: relative;
+  z-index: 10;
+}
+
+nav ul{
+  margin: 0px;
+  padding: 0px; 
+  list-style: none;
+}
+
+nav ul li{
+  width: 25%;
+  height: 55px;
+  float: left;
+  background-color: #82A4D7; 
+  text-align: center;
+  font-weight: bold;
+}
+
+.MenuImages{
+  height: 30px;
+  margin-top: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+nav ul a{
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+nav ul li ul{
+  margin-top: 3px;
+  display: none;
+  float: none;
+  line-height: 55px;
+}
+
+.Menu:hover{
+  box-shadow: 0px 0px 15px 1px #081C39 inset;
+  -webkit-animation: anim_colorMenu 0.7s infinite alternate;
+  -moz-animation: anim_colorMenu 0.7s infinite alternate;
+  -ms-animation: anim_colorMenu 0.7s infinite alternate;
+  -o-animation: anim_colorMenu 0.7s infinite alternate;
+  animation: anim_colorMenu 0.7s infinite alternate;
+}
+
+.Menu:hover ul{
+  display: block;
+}
+
+.SousMenu{
+  width: 100%;
+  background-color: #C4D7F4;
+}
+
+.SousMenu:hover{
+  background-color: #A9C1E5;
+  box-shadow: 0px 0px 15px 1px #21406F inset;
+}
+
+@keyframes anim_colorMenu{
+  10% {background-color: #7C9FD4;}
+  20% {background-color: #779CD3;}
+  30% {background-color: #7298D0;}
+  40% {background-color: #6D93CD;}
+  50% {background-color: #698FC9;}
+  60% {background-color: #658CC7;}
+  70% {background-color: #628AC5;}
+  80% {background-color: #5F87C2;}
+  90% {background-color: #5D85C1;}
+  100% {background-color: #5B83BF;}
+}
+
+@-webkit-keyframes anim_colorMenu{
+  10% {background-color: #7C9FD4;}
+  20% {background-color: #779CD3;}
+  30% {background-color: #7298D0;}
+  40% {background-color: #6D93CD;}
+  50% {background-color: #698FC9;}
+  60% {background-color: #658CC7;}
+  70% {background-color: #628AC5;}
+  80% {background-color: #5F87C2;}
+  90% {background-color: #5D85C1;}
+  100% {background-color: #5B83BF;}
+} 
+
+@-moz-keyframes anim_colorMenu{
+  10% {background-color: #7C9FD4;}
+  20% {background-color: #779CD3;}
+  30% {background-color: #7298D0;}
+  40% {background-color: #6D93CD;}
+  50% {background-color: #698FC9;}
+  60% {background-color: #658CC7;}
+  70% {background-color: #628AC5;}
+  80% {background-color: #5F87C2;}
+  90% {background-color: #5D85C1;}
+  100% {background-color: #5B83BF;}
+} 
+
+@-ms-keyframes anim_colorMenu{
+  10% {background-color: #7C9FD4;}
+  20% {background-color: #779CD3;}
+  30% {background-color: #7298D0;}
+  40% {background-color: #6D93CD;}
+  50% {background-color: #698FC9;}
+  60% {background-color: #658CC7;}
+  70% {background-color: #628AC5;}
+  80% {background-color: #5F87C2;}
+  90% {background-color: #5D85C1;}
+  100% {background-color: #5B83BF;}
+} 
+
+@-o-keyframes anim_colorMenu{
+  10% {background-color: #7C9FD4;}
+  20% {background-color: #779CD3;}
+  30% {background-color: #7298D0;}
+  40% {background-color: #6D93CD;}
+  50% {background-color: #698FC9;}
+  60% {background-color: #658CC7;}
+  70% {background-color: #628AC5;}
+  80% {background-color: #5F87C2;}
+  90% {background-color: #5D85C1;}
+  100% {background-color: #5B83BF;}
+}
+
+/*ARTICLES****************************************************************/
+article{
+  background-color: white;
+  border: solid orange 3px;
+  border-radius: 10px; 
+}
+
+/*HAUT ET BAS DE PAGE*****************************************************/
+.BasdePage{
+  top: 0px;
+  right: 10px;
+  position: fixed;
+  font-family: Trebuchet MS;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.HautdePage{
+  bottom: 0px;
+  right: 10px;
+  position: fixed;
+  font-family: Trebuchet MS;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.BasdePage a, .HautdePage a{
+  text-decoration: none;
+  color: orange;
+}
+
+.BasdePage a:hover, .HautdePage a:hover{
+  color: #FCE4BD;
+}
+
+
+/*PIED DE PAGE************************************************************/
+
+html{ /*Permet de réaliser le pied de page*/
+  position: relative;
+  min-height: 100%;
+}
+
+footer{
+  width: 100%;
+  height: 50px;
+  min-width:500px;
+  bottom: 0px;
+  position: absolute;
+  background-color: #38537A;
+}
+
+footer ul{
+  margin: 0px;
+}
+
+footer ul li{
+  width: 24.5%;
+  float: left;
+  list-style: none;
+  text-align: center;
+  font-family: Trebuchet MS;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+footer a{
+  text-decoration: none;
+  color: black;
+}
+
+footer a:hover{
+  color: #FCE4BD;
+}
+
+footer p{
+  text-align: center;
+  font-family: Trebuchet MS;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+
+}

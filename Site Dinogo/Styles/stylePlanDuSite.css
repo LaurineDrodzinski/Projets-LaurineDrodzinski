@@ -1,0 +1,33 @@
+/*Pour les écrans de largeur supérieure à 521px*/
+@media screen and (min-width: 521px){
+
+
+article{
+	width: 70%;
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 50px;
+	font-size: 20px;
+	font-family: Trebuchet MS;
+}
+
+article ul{
+	list-style-image : url("../Images/Plan/puce1.png");
+}
+
+article ul ul{
+	list-style-image : url("../Images/Plan/puce2.png");
+}
+
+article a{
+	text-decoration: none;
+	color: black;
+}
+
+article a:hover {
+	color: orange;
+}
+
+
+}

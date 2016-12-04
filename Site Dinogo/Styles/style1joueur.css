@@ -1,0 +1,159 @@
+/*Pour les écrans de largeur supérieure à 521px*/
+@media screen and (min-width: 521px){
+
+
+article{
+    width: 65%;
+    min-width: 450px; 
+    margin: 100px auto 100px auto;
+    padding: 10px;   
+    text-align: center;
+    font-family: arial;
+    line-height: 22px;
+}
+
+article p img{
+	width: 35px;
+}
+
+table{
+	width: auto;
+    margin-left: auto;
+    margin-right: auto;
+	background: url("../Images/Guide1j/fond.png") no-repeat;
+    background-size: 100% 100%;
+    border-radius: 10px;
+	text-align: center;
+}
+
+table img{
+	display: inline-block;
+}
+
+.minuteur{
+	width: 15%;
+}
+
+.compteur{
+	width: 8%;
+}
+
+.dino{
+	width: 30%;
+}
+
+.pourcentage{
+	width: 15%;
+}
+
+.question{
+	width: 80%;
+}
+
+.reponses{
+	width: 90%;
+}
+
+.legendeMinuteur{
+	width: 13%;
+	position: absolute;
+	display: none;
+}
+
+.legendeCompteur{
+	width: 14%;
+	margin-top: -3%;
+	position: absolute;
+	display: none;
+}
+
+.legendeDino{
+	width: 18%;
+	margin-top: 5%;
+	position: absolute;
+	display: none;
+}
+
+.legendePourcentage{
+	width: 20%;
+	position: absolute;
+	display: none;
+}
+
+.legendeQuestion{
+	width: 16%;
+	margin-top: -5%;
+	margin-left: -13%;
+	position: absolute;
+	display: none;
+}
+
+.legendeReponses{
+	width: 12%;
+	margin-top: -10%;
+	margin-left: -10%;
+	position: absolute;
+	display: none;
+}
+
+.minuteur:hover ~ .legendeMinuteur, 
+.compteur:hover ~ .legendeCompteur,
+.dino:hover ~ .legendeDino, 
+.pourcentage:hover ~ .legendePourcentage, 
+.question:hover ~ .legendeQuestion,
+.reponses:hover ~ .legendeReponses{
+	display: inline-block;
+  	-webkit-animation: anim_Legende 1s infinite alternate;
+  	-moz-animation: anim_Legende 1s infinite alternate;
+  	-ms-animation: anim_Legende 1s infinite alternate;
+  	-o-animation: anim_Legende 1s infinite alternate;
+  	animation: anim_Legende 1s infinite alternate;
+}
+
+@keyframes anim_Legende {
+    0%{opacity: 1;}
+    10%{opacity: 0.9;}
+    20%{opacity: 0.8;}
+    30%{opacity: 0.7;}
+    40%{opacity: 0.6;}
+    50%{opacity: 0.5;}
+}
+
+@-webkit-keyframes anim_Legende{
+    0%{opacity: 1;}
+    10%{opacity: 0.9;}
+    20%{opacity: 0.8;}
+    30%{opacity: 0.7;}
+    40%{opacity: 0.6;}
+    50%{opacity: 0.5;}
+} 
+
+@-moz-keyframes anim_Legende{
+    0%{opacity: 1;}
+    10%{opacity: 0.9;}
+    20%{opacity: 0.8;}
+    30%{opacity: 0.7;}
+    40%{opacity: 0.6;}
+    50%{opacity: 0.5;}
+} 
+
+@-ms-keyframes anim_Legende{
+    0%{opacity: 1;}
+    10%{opacity: 0.9;}
+    20%{opacity: 0.8;}
+    30%{opacity: 0.7;}
+    40%{opacity: 0.6;}
+    50%{opacity: 0.5;}
+} 
+
+@-o-keyframes anim_Legende{
+    0%{opacity: 1;}
+    10%{opacity: 0.9;}
+    20%{opacity: 0.8;}
+    30%{opacity: 0.7;}
+    40%{opacity: 0.6;}
+    50%{opacity: 0.5;}
+}
+
+
+}
