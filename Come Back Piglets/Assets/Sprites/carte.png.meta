@@ -1,0 +1,501 @@
+fileFormatVersion: 2
+guid: af2522d090e20f747ae454afce9304fc
+timeCreated: 1471971426
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: carte_0
+    21300002: carte_1
+    21300004: carte_2
+    21300006: carte_3
+    21300008: carte_4
+    21300010: carte_5
+    21300012: carte_6
+    21300014: carte_7
+    21300016: carte_8
+    21300018: carte_9
+    21300020: carte_10
+    21300022: carte_11
+    21300024: carte_12
+    21300026: carte_13
+    21300028: carte_14
+    21300030: carte_15
+    21300032: carte_16
+    21300034: carte_17
+    21300036: carte_18
+    21300038: carte_19
+    21300040: carte_20
+    21300042: carte_21
+    21300044: carte_22
+    21300046: carte_23
+    21300048: carte_24
+    21300050: carte_25
+    21300052: carte_26
+    21300054: carte_27
+    21300056: carte_28
+    21300058: carte_29
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: carte_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 685
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 50}
+    - name: carte_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 685
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 50}
+    - name: carte_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 685
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -49, y: 50}
+        - {x: -50, y: 49}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 50}
+    - name: carte_3
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 685
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 49}
+        - {x: 49, y: 50}
+    - name: carte_4
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 774
+        width: 25
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_5
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 751
+        width: 28
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_6
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 732
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_7
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 715
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 573
+        width: 100
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 49.5}
+        - {x: -50, y: -49.5}
+        - {x: 50, y: -49.5}
+        - {x: 50, y: -46.5}
+        - {x: -46, y: 49.5}
+    - name: carte_9
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 573
+        width: 100
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 46, y: 49.5}
+        - {x: -50, y: -46.5}
+        - {x: -50, y: -49.5}
+        - {x: 50, y: -49.5}
+        - {x: 50, y: 49.5}
+    - name: carte_10
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 572
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 50}
+    - name: carte_11
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 572
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 50}
+    - name: carte_12
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 446
+        width: 21
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_13
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 734
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: 25}
+        - {x: -13.5, y: -16}
+        - {x: -14.5, y: -19}
+        - {x: -14.5, y: -25}
+        - {x: 22.5, y: -25}
+        - {x: 27.5, y: -9}
+        - {x: 27.5, y: 25}
+    - name: carte_14
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 734
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.5, y: 25}
+        - {x: -14.5, y: 1}
+        - {x: -14.5, y: -25}
+        - {x: 21.5, y: -25}
+        - {x: 21.5, y: 25}
+    - name: carte_15
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 734
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 25}
+        - {x: -12.5, y: 18}
+        - {x: -14.5, y: -2}
+        - {x: -14.5, y: -25}
+        - {x: 18.5, y: -25}
+        - {x: 18.5, y: -1}
+        - {x: 11.5, y: 25}
+    - name: carte_16
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 734
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 25}
+        - {x: -19.5, y: -25}
+        - {x: 18.5, y: -25}
+        - {x: 18.5, y: -1}
+        - {x: 2.5, y: 25}
+    - name: carte_17
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 735
+        width: 55
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 24}
+        - {x: -26.5, y: 18}
+        - {x: -26.5, y: 10}
+        - {x: -25.5, y: 5}
+        - {x: -15.5, y: -25}
+        - {x: 18.5, y: -25}
+        - {x: 18.5, y: -9}
+        - {x: 10.5, y: 24}
+    - name: carte_18
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 698
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_19
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 712
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_20
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 696
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_21
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 683
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_22
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 674
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_23
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 689
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: carte_24
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 458
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -38}
+        - {x: -42, y: -49}
+        - {x: -39, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 50}
+    - name: carte_25
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 524
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17}
+        - {x: -17, y: -17}
+        - {x: -13, y: -17}
+        - {x: 17, y: 13}
+        - {x: 17, y: 17}
+    - name: carte_26
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 524
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17}
+        - {x: -17, y: 13}
+        - {x: 13, y: -17}
+        - {x: 17, y: -17}
+        - {x: 17, y: 17}
+    - name: carte_27
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 458
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 17}
+        - {x: 13, y: 15}
+        - {x: -17, y: -13}
+        - {x: -17, y: -17}
+        - {x: 17, y: -17}
+        - {x: 17, y: 17}
+    - name: carte_28
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 458
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 17}
+        - {x: -17, y: -17}
+        - {x: 17, y: -17}
+        - {x: 17, y: -14}
+        - {x: -14, y: 17}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
