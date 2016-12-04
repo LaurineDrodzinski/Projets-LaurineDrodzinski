@@ -1,0 +1,50 @@
+Initialize engine version: 5.4.1f1 (649f48bbbf0f)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon R9 200 Series (ID=0x67b1)
+    Vendor:   ATI
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.104 seconds
+Platform assembly: C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\LaurineD\Documents\Come Back Piglets\Builds\v1.0\ComeBackPiglets_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.710841 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.799754 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1169.
+Total: 0.292680 ms (FindLiveObjects: 0.034101 ms CreateObjectMapping: 0.025162 ms MarkObjects: 0.176799 ms  DeleteObjects: 0.055622 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.659072 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1169.
+Total: 0.648928 ms (FindLiveObjects: 0.095683 ms CreateObjectMapping: 0.050325 ms MarkObjects: 0.492656 ms  DeleteObjects: 0.008608 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.684445 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1169.
+Total: 0.968757 ms (FindLiveObjects: 0.147333 ms CreateObjectMapping: 0.082440 ms MarkObjects: 0.721105 ms  DeleteObjects: 0.015892 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.780369 ms
+
+Unloading 83 unused Assets to reduce memory usage. Loaded Objects now: 198.
+Total: 0.367836 ms (FindLiveObjects: 0.017878 ms CreateObjectMapping: 0.013905 ms MarkObjects: 0.167529 ms  DeleteObjects: 0.167529 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: fa8 -> priority: 1 
