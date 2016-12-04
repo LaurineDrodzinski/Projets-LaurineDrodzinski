@@ -1,0 +1,42 @@
+  					       Bienvenue dans Dinogo !!!!                                             
+				       Aide les dinosaures à revenir sur terre !
+				Pour cela nous avons besoin de toi et de tes connaissances.         
+			      			                                             
+ 					         MODE 1 JOUEUR			                                                    
+						  Mode Facile              
+
+			      Ton but sera de construire le plus de dinosaures possible           
+			 pour cela tu devras bien répondre aux questions. Plus tu enchaînes              
+		        les bonnes réponses, plus ton dinosaure se construit rapidement.             
+		        Si tu réponds rapidement tu gagnes encore plus de pièces pour la construction ! 
+
+			        	         Mode Difficile             
+
+		      			Même règles que le mode facile. 
+              		   Mais chacune de tes mauvaises réponses te fera perdre une ligne!!!                             
+                        
+                                                MODE 2 JOUEURS 
+                                           			                   
+			 Ici ton but sera de construire plus de dinosaures que ton adversaire.         
+			 Chacune de tes bonnes réponses te fera gagner une ligne avec le même           
+			 système de bonus que dans le mode 1 joueur. Mais en plus de gagner          
+			 une ligne de construction tu feras perdre à ton adversaire 1 ligne         
+			                         de construction !!
+							
+						Comment jouer ?	
+					Joueur 1 : avec les touches : W X C
+					Joueur 2 : aves les touches : 1 2 3
+					Pour quitter le jeu : touche : 'q'		
+				,----------------------------------------------------,
+				| [][][][][]  [][][][][]  [][][][]  [][__]  [][][][] |
+				|                                                    |
+				|  [][][][][][][][][][][][][][_]    [][][]  [][][][] |
+				|  [_][][][][][][][][][][][][][ |   [][][]  [][][][] |
+				| [q][][][][][][][][][][][][][]||     []    [][][][] |
+				| [W][X][C][][][][][][][][][__]     [][][] [1][2][3] |
+				|   [__][________________][__]              [__][]|| |
+			  	`----------------------------------------------------'
+				
+											Menu :    'm' | Quitter:  'q'
+				
+				
